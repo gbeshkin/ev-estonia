@@ -1,37 +1,30 @@
-name: Update EV charging data
+name: Update EV data
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 5,17 * * *'
-
-permissions:
-  contents: write
+    - cron: "0 6,18 * * *"
+  workflow_dispatch:
 
 jobs:
-  build-data:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
+        run: pip install requests
 
-      - name: Generate chargers.json
+      - name: Fetch OCM Estonia data
         env:
           OCM_API_KEY: ${{ secrets.OCM_API_KEY }}
         run: python scripts/fetch_ocm_estonia.py
 
-      - name: Commit changes
+      - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
