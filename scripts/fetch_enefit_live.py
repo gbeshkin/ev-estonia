@@ -1,26 +1,15 @@
 import json
-import time
-from datetime import datetime, timezone
+import os
+import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set
+from typing import Any
 
 import requests
 
-BASE = "https://account.enefitvolt.com/stationFacade"
-OUT_FILE = Path("data/chargers-enefit.json")
-TIMEOUT = 30
-SLEEP_SECONDS = 0.15
+BASE_URL = "https://account.enefitvolt.com/stationFacade"
+OUT_FILE = Path("data/chargers.json")
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/javascript, */*; q=0.01",
-    "Content-Type": "application/json;charset=UTF-8",
-    "X-Requested-With": "XMLHttpRequest",
-    "Origin": "https://account.enefitvolt.com",
-    "Referer": "https://account.enefitvolt.com/findCharger",
-}
-
-# Wide bounds that cover Estonia and nearby edge cases.
+# Estonia bounds used in the TalTech thesis scraper example.
 BOUNDS_PAYLOAD = {
     "filterByIsManaged": True,
     "filterByBounds": {
@@ -32,87 +21,55 @@ BOUNDS_PAYLOAD = {
 }
 
 
-def post_json(session: requests.Session, path: str, payload: Dict[str, Any]) -> Dict[str, Any]:
-    response = session.post(
-        f"{BASE}/{path}",
-        data=json.dumps(payload),
-        timeout=TIMEOUT,
+def build_session() -> requests.Session:
+    session = requests.Session()
+    session.headers.update(
+        {
+            "User-Agent": os.getenv("ENEFIT_USER_AGENT", "Mozilla/5.0"),
+            "Accept": "application/json, text/javascript, */*; q=0.01",
+            "Content-Type": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "Origin": "https://account.enefitvolt.com",
+            "Referer": os.getenv(
+                "ENEFIT_REFERER",
+                "https://account.enefitvolt.com/findCharger?59.7690375,24.5722210,6z",
+            ),
+        }
     )
+
+    csrf = os.getenv("ENEFIT_CSRF_TOKEN", "").strip()
+    cookie = os.getenv("ENEFIT_COOKIE", "").strip()
+    if csrf:
+        session.headers["x-csrf-token"] = csrf
+    if cookie:
+        session.headers["Cookie"] = cookie
+    return session
+
+
+def post_json(session: requests.Session, path: str, payload: dict[str, Any]) -> dict[str, Any]:
+    response = session.post(f"{BASE_URL}/{path}", json=payload, timeout=30)
     response.raise_for_status()
     return response.json()
 
 
-
-def get_json(session: requests.Session, path: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    response = session.get(
-        f"{BASE}/{path}",
-        params=params,
-        timeout=TIMEOUT,
-    )
+def get_json(session: requests.Session, path: str, params: dict[str, Any]) -> dict[str, Any]:
+    response = session.get(f"{BASE_URL}/{path}", params=params, timeout=30)
     response.raise_for_status()
     return response.json()
 
 
-
-def unwrap_data_list(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
-    data = payload.get("data")
+def extract_records(resp: dict[str, Any]) -> list[dict[str, Any]]:
+    data = resp.get("data")
+    if isinstance(data, list) and len(data) > 1 and isinstance(data[1], list):
+        return data[1]
     if isinstance(data, list):
-        for item in reversed(data):
-            if isinstance(item, list):
-                return item
+        return [x for x in data if isinstance(x, dict)]
     if isinstance(data, dict):
-        for value in data.values():
-            if isinstance(value, list):
-                return value
+        return [data]
     return []
 
 
-
-def fetch_site_ids(session: requests.Session) -> List[int]:
-    payload = post_json(session, "findSitesInBounds", BOUNDS_PAYLOAD)
-    sites = unwrap_data_list(payload)
-    ids: List[int] = []
-    for site in sites:
-        site_id = site.get("id")
-        if isinstance(site_id, int):
-            ids.append(site_id)
-        elif isinstance(site_id, str) and site_id.isdigit():
-            ids.append(int(site_id))
-    return sorted(set(ids))
-
-
-
-def fetch_station_ids_for_site(session: requests.Session, site_id: int) -> List[int]:
-    payload = {
-        "filterByIsManaged": True,
-        "filterBySiteId": str(site_id),
-    }
-    response = post_json(session, "findStationsBySiteId", payload)
-    stations = unwrap_data_list(response)
-    ids: List[int] = []
-    for station in stations:
-        station_id = station.get("id")
-        if isinstance(station_id, int):
-            ids.append(station_id)
-        elif isinstance(station_id, str) and station_id.isdigit():
-            ids.append(int(station_id))
-    return sorted(set(ids))
-
-
-
-def safe_float(value: Any) -> Optional[float]:
-    if isinstance(value, (int, float)):
-        return float(value)
-    if isinstance(value, str) and value.strip():
-        try:
-            return float(value)
-        except ValueError:
-            return None
-    return None
-
-
-
-def map_power_type(power_kw: Optional[float]) -> str:
+def infer_power_type(power_kw: float | None) -> str:
     if power_kw is None:
         return "AC"
     if power_kw > 50:
@@ -122,115 +79,108 @@ def map_power_type(power_kw: Optional[float]) -> str:
     return "AC"
 
 
-
-def pick_station_price(sockets: List[Dict[str, Any]]) -> Optional[float]:
+def choose_station_price(sockets: list[dict[str, Any]]) -> float | None:
     prices = [s["price_eur_kwh"] for s in sockets if isinstance(s.get("price_eur_kwh"), (int, float))]
-    if not prices:
-        return None
-    return min(prices)
+    return min(prices) if prices else None
 
 
-
-def transform_station_details(payload: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-    if not payload.get("success"):
-        return None
-
-    data = payload.get("data") or {}
-    station_id = data.get("id")
-    if station_id is None:
-        return None
-
-    sockets: List[Dict[str, Any]] = []
-    socket_items = data.get("stationSockets") or []
-
-    for socket in socket_items:
+def transform_station(data: dict[str, Any]) -> dict[str, Any]:
+    sockets = []
+    for socket in data.get("stationSockets", []):
         prices = socket.get("socketPrices") or []
-        kwh_price = None
+        price = None
         if prices and isinstance(prices[0], dict):
-            kwh_price = safe_float(prices[0].get("kwhPrice"))
-
-        max_power = safe_float(socket.get("maximumPower"))
+            price = prices[0].get("kwhPrice")
         sockets.append(
             {
-                "socket_name": socket.get("name") or "",
-                "status_id": socket.get("socketStatusId"),
-                "power_kw": max_power,
-                "price_eur_kwh": kwh_price,
-                "socket_type_id": socket.get("stationModelSocketSocketTypeId"),
-                "voltage_type": socket.get("stationModelSocketVoltageType") or "",
+                "socket_name": socket.get("name"),
+                "socket_status": socket.get("socketStatusId"),
+                "maximum_power_kw": socket.get("maximumPower"),
+                "price_eur_kwh": price,
+                "socket_type": socket.get("stationModelSocketSocketTypeId"),
+                "voltage_type": socket.get("stationModelSocketVoltageType"),
             }
         )
 
-    max_power_values = [s["power_kw"] for s in sockets if isinstance(s.get("power_kw"), (int, float))]
-    station_power = max(max_power_values) if max_power_values else None
-    station_price = pick_station_price(sockets)
+    max_power = max(
+        [s["maximum_power_kw"] for s in sockets if isinstance(s.get("maximum_power_kw"), (int, float))],
+        default=None,
+    )
 
     return {
-        "operator": data.get("stationOwnerName") or "Enefit Volt",
-        "operator_key": "enefit",
-        "station_id": station_id,
+        "station_id": data.get("id"),
         "site_id": data.get("siteId"),
-        "station_name": data.get("siteDisplayName") or data.get("caption") or f"Station {station_id}",
-        "caption": data.get("caption") or "",
+        "station_name": data.get("siteDisplayName") or data.get("caption") or "Unnamed station",
         "city": data.get("addressCity") or "",
         "address": data.get("addressAddress1") or "",
-        "zip": data.get("addressZipCode") or "",
-        "lat": safe_float(data.get("latitude")),
-        "lng": safe_float(data.get("longitude")),
-        "status_id": data.get("stationStatusId"),
-        "charging_speed_id": data.get("chargingSpeedId"),
-        "power_type": map_power_type(station_power),
-        "power_kw": station_power,
-        "price_eur_kwh": station_price,
-        "price_source": "live_station_api",
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "lat": data.get("latitude"),
+        "lng": data.get("longitude"),
+        "power_type": infer_power_type(max_power),
+        "power_kw": max_power,
+        "price_eur_kwh": choose_station_price(sockets),
+        "status": data.get("stationStatusId") or "UNKNOWN",
+        "price_source": "live_station_price",
         "sockets": sockets,
     }
 
 
+def fetch_all() -> list[dict[str, Any]]:
+    session = build_session()
 
-def fetch_station_details(session: requests.Session, station_id: int) -> Optional[Dict[str, Any]]:
-    payload = get_json(session, "findStationById", {"stationId": station_id})
-    return transform_station_details(payload)
+    sites_resp = post_json(session, "findSitesInBounds", BOUNDS_PAYLOAD)
+    sites = extract_records(sites_resp)
+    if not sites:
+        raise RuntimeError(
+            "No sites returned. Usually this means Enefit rejected the request and you need fresh ENEFIT_CSRF_TOKEN / ENEFIT_COOKIE values."
+        )
+
+    station_ids: list[int] = []
+    for site in sites:
+        site_id = site.get("id")
+        if site_id is None:
+            continue
+        stations_resp = post_json(
+            session,
+            "findStationsBySiteId",
+            {"filterByIsManaged": True, "filterBySiteId": str(site_id)},
+        )
+        stations = extract_records(stations_resp)
+        for station in stations:
+            station_id = station.get("id")
+            if isinstance(station_id, int):
+                station_ids.append(station_id)
+
+    station_ids = sorted(set(station_ids))
+    if not station_ids:
+        raise RuntimeError("No station ids returned from findStationsBySiteId.")
+
+    output: list[dict[str, Any]] = []
+    for station_id in station_ids:
+        station_resp = get_json(session, "findStationById", {"stationId": station_id})
+        station_data = station_resp.get("data")
+        if isinstance(station_data, dict):
+            output.append(transform_station(station_data))
+
+    return output
 
 
-
-def main() -> None:
-    session = requests.Session()
-    session.headers.update(HEADERS)
-
-    site_ids = fetch_site_ids(session)
-    print(f"Sites found: {len(site_ids)}")
-
-    station_ids: Set[int] = set()
-    for index, site_id in enumerate(site_ids, start=1):
-        ids = fetch_station_ids_for_site(session, site_id)
-        station_ids.update(ids)
-        if index % 25 == 0:
-            print(f"Processed sites: {index}/{len(site_ids)} | stations so far: {len(station_ids)}")
-        time.sleep(SLEEP_SECONDS)
-
-    print(f"Unique station ids: {len(station_ids)}")
-
-    stations: List[Dict[str, Any]] = []
-    for index, station_id in enumerate(sorted(station_ids), start=1):
-        try:
-            station = fetch_station_details(session, station_id)
-            if station:
-                stations.append(station)
-        except requests.RequestException as exc:
-            print(f"Failed stationId={station_id}: {exc}")
-        if index % 25 == 0:
-            print(f"Fetched details: {index}/{len(station_ids)}")
-        time.sleep(SLEEP_SECONDS)
+def main() -> int:
+    try:
+        stations = fetch_all()
+    except requests.HTTPError as exc:
+        print(f"HTTP error: {exc}", file=sys.stderr)
+        return 1
+    except Exception as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(json.dumps(stations, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    priced = sum(1 for item in stations if isinstance(item.get("price_eur_kwh"), (int, float)))
+    priced = sum(1 for s in stations if isinstance(s.get("price_eur_kwh"), (int, float)))
     print(f"Saved {len(stations)} stations to {OUT_FILE}")
-    print(f"Stations with live price: {priced}/{len(stations)}")
+    print(f"Stations with price: {priced}/{len(stations)}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
