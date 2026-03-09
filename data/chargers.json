@@ -11,7 +11,7 @@
     "power_kw": 100.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302310+00:00"
+    "updated_at": "2026-03-09T12:22:12.822672+00:00"
   },
   {
     "operator": "Unknown",
@@ -25,7 +25,7 @@
     "power_kw": 180.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302336+00:00"
+    "updated_at": "2026-03-09T12:22:12.822694+00:00"
   },
   {
     "operator": "Unknown",
@@ -39,7 +39,7 @@
     "power_kw": 150.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302342+00:00"
+    "updated_at": "2026-03-09T12:22:12.822699+00:00"
   },
   {
     "operator": "Unknown",
@@ -53,7 +53,7 @@
     "power_kw": 250.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302349+00:00"
+    "updated_at": "2026-03-09T12:22:12.822707+00:00"
   },
   {
     "operator": "Unknown",
@@ -67,7 +67,7 @@
     "power_kw": 250.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302355+00:00"
+    "updated_at": "2026-03-09T12:22:12.822713+00:00"
   },
   {
     "operator": "Unknown",
@@ -81,7 +81,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302359+00:00"
+    "updated_at": "2026-03-09T12:22:12.822717+00:00"
   },
   {
     "operator": "Unknown",
@@ -95,7 +95,7 @@
     "power_kw": 22.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302363+00:00"
+    "updated_at": "2026-03-09T12:22:12.822721+00:00"
   },
   {
     "operator": "Unknown",
@@ -109,7 +109,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302374+00:00"
+    "updated_at": "2026-03-09T12:22:12.822731+00:00"
   },
   {
     "operator": "Unknown",
@@ -123,7 +123,7 @@
     "power_kw": 11.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302378+00:00"
+    "updated_at": "2026-03-09T12:22:12.822735+00:00"
   },
   {
     "operator": "Unknown",
@@ -137,7 +137,7 @@
     "power_kw": 160.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302382+00:00"
+    "updated_at": "2026-03-09T12:22:12.822739+00:00"
   },
   {
     "operator": "Unknown",
@@ -151,7 +151,7 @@
     "power_kw": 22.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302385+00:00"
+    "updated_at": "2026-03-09T12:22:12.822742+00:00"
   },
   {
     "operator": "Unknown",
@@ -165,7 +165,7 @@
     "power_kw": 120.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302388+00:00"
+    "updated_at": "2026-03-09T12:22:12.822745+00:00"
   },
   {
     "operator": "Unknown",
@@ -179,7 +179,7 @@
     "power_kw": 150.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302394+00:00"
+    "updated_at": "2026-03-09T12:22:12.822750+00:00"
   },
   {
     "operator": "Unknown",
@@ -193,7 +193,7 @@
     "power_kw": 22.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302397+00:00"
+    "updated_at": "2026-03-09T12:22:12.822754+00:00"
   },
   {
     "operator": "Unknown",
@@ -207,7 +207,7 @@
     "power_kw": 300.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302401+00:00"
+    "updated_at": "2026-03-09T12:22:12.822757+00:00"
   },
   {
     "operator": "Unknown",
@@ -221,7 +221,7 @@
     "power_kw": 350.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302404+00:00"
+    "updated_at": "2026-03-09T12:22:12.822760+00:00"
   },
   {
     "operator": "Unknown",
@@ -235,7 +235,7 @@
     "power_kw": 350.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302407+00:00"
+    "updated_at": "2026-03-09T12:22:12.822764+00:00"
   },
   {
     "operator": "Unknown",
@@ -249,7 +249,7 @@
     "power_kw": 22.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302410+00:00"
+    "updated_at": "2026-03-09T12:22:12.822767+00:00"
   },
   {
     "operator": "Unknown",
@@ -263,7 +263,7 @@
     "power_kw": 22.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302413+00:00"
+    "updated_at": "2026-03-09T12:22:12.822770+00:00"
   },
   {
     "operator": "Unknown",
@@ -277,7 +277,7 @@
     "power_kw": 22.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302416+00:00"
+    "updated_at": "2026-03-09T12:22:12.822773+00:00"
   },
   {
     "operator": "Unknown",
@@ -291,7 +291,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302420+00:00"
+    "updated_at": "2026-03-09T12:22:12.822776+00:00"
   },
   {
     "operator": "Unknown",
@@ -305,7 +305,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302423+00:00"
+    "updated_at": "2026-03-09T12:22:12.822779+00:00"
   },
   {
     "operator": "Unknown",
@@ -319,7 +319,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302429+00:00"
+    "updated_at": "2026-03-09T12:22:12.822784+00:00"
   },
   {
     "operator": "Unknown",
@@ -333,7 +333,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302432+00:00"
+    "updated_at": "2026-03-09T12:22:12.822788+00:00"
   },
   {
     "operator": "Unknown",
@@ -347,7 +347,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302435+00:00"
+    "updated_at": "2026-03-09T12:22:12.822791+00:00"
   },
   {
     "operator": "Unknown",
@@ -361,7 +361,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302438+00:00"
+    "updated_at": "2026-03-09T12:22:12.822795+00:00"
   },
   {
     "operator": "Unknown",
@@ -375,7 +375,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302441+00:00"
+    "updated_at": "2026-03-09T12:22:12.822798+00:00"
   },
   {
     "operator": "Unknown",
@@ -389,7 +389,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302444+00:00"
+    "updated_at": "2026-03-09T12:22:12.822801+00:00"
   },
   {
     "operator": "Unknown",
@@ -403,7 +403,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302447+00:00"
+    "updated_at": "2026-03-09T12:22:12.822804+00:00"
   },
   {
     "operator": "Unknown",
@@ -417,7 +417,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302450+00:00"
+    "updated_at": "2026-03-09T12:22:12.822807+00:00"
   },
   {
     "operator": "Unknown",
@@ -431,7 +431,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302454+00:00"
+    "updated_at": "2026-03-09T12:22:12.822810+00:00"
   },
   {
     "operator": "Unknown",
@@ -445,7 +445,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302457+00:00"
+    "updated_at": "2026-03-09T12:22:12.822813+00:00"
   },
   {
     "operator": "Unknown",
@@ -459,7 +459,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302462+00:00"
+    "updated_at": "2026-03-09T12:22:12.822818+00:00"
   },
   {
     "operator": "Unknown",
@@ -473,7 +473,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302466+00:00"
+    "updated_at": "2026-03-09T12:22:12.822821+00:00"
   },
   {
     "operator": "Unknown",
@@ -487,7 +487,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302496+00:00"
+    "updated_at": "2026-03-09T12:22:12.822824+00:00"
   },
   {
     "operator": "Unknown",
@@ -501,7 +501,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302503+00:00"
+    "updated_at": "2026-03-09T12:22:12.822827+00:00"
   },
   {
     "operator": "Unknown",
@@ -515,7 +515,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302509+00:00"
+    "updated_at": "2026-03-09T12:22:12.822830+00:00"
   },
   {
     "operator": "Unknown",
@@ -529,7 +529,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302515+00:00"
+    "updated_at": "2026-03-09T12:22:12.822833+00:00"
   },
   {
     "operator": "Unknown",
@@ -543,7 +543,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302522+00:00"
+    "updated_at": "2026-03-09T12:22:12.822836+00:00"
   },
   {
     "operator": "Unknown",
@@ -557,7 +557,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302527+00:00"
+    "updated_at": "2026-03-09T12:22:12.822838+00:00"
   },
   {
     "operator": "Unknown",
@@ -571,7 +571,7 @@
     "power_kw": 47.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302530+00:00"
+    "updated_at": "2026-03-09T12:22:12.822841+00:00"
   },
   {
     "operator": "Unknown",
@@ -585,7 +585,7 @@
     "power_kw": 47.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302533+00:00"
+    "updated_at": "2026-03-09T12:22:12.822844+00:00"
   },
   {
     "operator": "Unknown",
@@ -599,7 +599,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302540+00:00"
+    "updated_at": "2026-03-09T12:22:12.822850+00:00"
   },
   {
     "operator": "Unknown",
@@ -613,7 +613,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302543+00:00"
+    "updated_at": "2026-03-09T12:22:12.822853+00:00"
   },
   {
     "operator": "Unknown",
@@ -627,7 +627,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302546+00:00"
+    "updated_at": "2026-03-09T12:22:12.822856+00:00"
   },
   {
     "operator": "Unknown",
@@ -641,7 +641,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302549+00:00"
+    "updated_at": "2026-03-09T12:22:12.822859+00:00"
   },
   {
     "operator": "Unknown",
@@ -655,7 +655,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302552+00:00"
+    "updated_at": "2026-03-09T12:22:12.822862+00:00"
   },
   {
     "operator": "Unknown",
@@ -669,7 +669,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302555+00:00"
+    "updated_at": "2026-03-09T12:22:12.822864+00:00"
   },
   {
     "operator": "Unknown",
@@ -683,7 +683,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302558+00:00"
+    "updated_at": "2026-03-09T12:22:12.822867+00:00"
   },
   {
     "operator": "Unknown",
@@ -697,7 +697,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302563+00:00"
+    "updated_at": "2026-03-09T12:22:12.822872+00:00"
   },
   {
     "operator": "Unknown",
@@ -711,7 +711,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302566+00:00"
+    "updated_at": "2026-03-09T12:22:12.822875+00:00"
   },
   {
     "operator": "Unknown",
@@ -725,7 +725,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302569+00:00"
+    "updated_at": "2026-03-09T12:22:12.822878+00:00"
   },
   {
     "operator": "Unknown",
@@ -739,7 +739,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302574+00:00"
+    "updated_at": "2026-03-09T12:22:12.822883+00:00"
   },
   {
     "operator": "Unknown",
@@ -753,7 +753,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302577+00:00"
+    "updated_at": "2026-03-09T12:22:12.822886+00:00"
   },
   {
     "operator": "Unknown",
@@ -767,7 +767,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302580+00:00"
+    "updated_at": "2026-03-09T12:22:12.822889+00:00"
   },
   {
     "operator": "Unknown",
@@ -781,7 +781,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302583+00:00"
+    "updated_at": "2026-03-09T12:22:12.822892+00:00"
   },
   {
     "operator": "Unknown",
@@ -795,7 +795,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302586+00:00"
+    "updated_at": "2026-03-09T12:22:12.822895+00:00"
   },
   {
     "operator": "Unknown",
@@ -809,7 +809,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302590+00:00"
+    "updated_at": "2026-03-09T12:22:12.822898+00:00"
   },
   {
     "operator": "Unknown",
@@ -823,7 +823,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302593+00:00"
+    "updated_at": "2026-03-09T12:22:12.822901+00:00"
   },
   {
     "operator": "Unknown",
@@ -837,7 +837,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302596+00:00"
+    "updated_at": "2026-03-09T12:22:12.822904+00:00"
   },
   {
     "operator": "Unknown",
@@ -851,7 +851,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302601+00:00"
+    "updated_at": "2026-03-09T12:22:12.822907+00:00"
   },
   {
     "operator": "Unknown",
@@ -865,7 +865,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302606+00:00"
+    "updated_at": "2026-03-09T12:22:12.822910+00:00"
   },
   {
     "operator": "Unknown",
@@ -879,7 +879,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302613+00:00"
+    "updated_at": "2026-03-09T12:22:12.822915+00:00"
   },
   {
     "operator": "Unknown",
@@ -893,7 +893,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302615+00:00"
+    "updated_at": "2026-03-09T12:22:12.822918+00:00"
   },
   {
     "operator": "Unknown",
@@ -907,7 +907,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302618+00:00"
+    "updated_at": "2026-03-09T12:22:12.822921+00:00"
   },
   {
     "operator": "Unknown",
@@ -921,7 +921,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302622+00:00"
+    "updated_at": "2026-03-09T12:22:12.822925+00:00"
   },
   {
     "operator": "Unknown",
@@ -935,7 +935,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302625+00:00"
+    "updated_at": "2026-03-09T12:22:12.822928+00:00"
   },
   {
     "operator": "Unknown",
@@ -949,7 +949,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302628+00:00"
+    "updated_at": "2026-03-09T12:22:12.822931+00:00"
   },
   {
     "operator": "Unknown",
@@ -963,7 +963,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302631+00:00"
+    "updated_at": "2026-03-09T12:22:12.822934+00:00"
   },
   {
     "operator": "Unknown",
@@ -977,7 +977,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302634+00:00"
+    "updated_at": "2026-03-09T12:22:12.822937+00:00"
   },
   {
     "operator": "Unknown",
@@ -991,7 +991,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302637+00:00"
+    "updated_at": "2026-03-09T12:22:12.822939+00:00"
   },
   {
     "operator": "Unknown",
@@ -1005,7 +1005,7 @@
     "power_kw": 47.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302640+00:00"
+    "updated_at": "2026-03-09T12:22:12.822942+00:00"
   },
   {
     "operator": "Unknown",
@@ -1019,7 +1019,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302645+00:00"
+    "updated_at": "2026-03-09T12:22:12.822947+00:00"
   },
   {
     "operator": "Unknown",
@@ -1033,7 +1033,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302648+00:00"
+    "updated_at": "2026-03-09T12:22:12.822950+00:00"
   },
   {
     "operator": "Unknown",
@@ -1047,7 +1047,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302651+00:00"
+    "updated_at": "2026-03-09T12:22:12.822953+00:00"
   },
   {
     "operator": "Unknown",
@@ -1061,7 +1061,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302654+00:00"
+    "updated_at": "2026-03-09T12:22:12.822956+00:00"
   },
   {
     "operator": "Unknown",
@@ -1075,7 +1075,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302657+00:00"
+    "updated_at": "2026-03-09T12:22:12.822959+00:00"
   },
   {
     "operator": "Unknown",
@@ -1089,7 +1089,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302660+00:00"
+    "updated_at": "2026-03-09T12:22:12.822962+00:00"
   },
   {
     "operator": "Unknown",
@@ -1103,7 +1103,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302663+00:00"
+    "updated_at": "2026-03-09T12:22:12.822965+00:00"
   },
   {
     "operator": "Unknown",
@@ -1117,7 +1117,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302666+00:00"
+    "updated_at": "2026-03-09T12:22:12.822968+00:00"
   },
   {
     "operator": "Unknown",
@@ -1131,7 +1131,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302669+00:00"
+    "updated_at": "2026-03-09T12:22:12.822971+00:00"
   },
   {
     "operator": "Unknown",
@@ -1145,7 +1145,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302672+00:00"
+    "updated_at": "2026-03-09T12:22:12.822974+00:00"
   },
   {
     "operator": "Unknown",
@@ -1159,7 +1159,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302677+00:00"
+    "updated_at": "2026-03-09T12:22:12.822979+00:00"
   },
   {
     "operator": "Unknown",
@@ -1173,7 +1173,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302680+00:00"
+    "updated_at": "2026-03-09T12:22:12.822982+00:00"
   },
   {
     "operator": "Unknown",
@@ -1187,7 +1187,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302685+00:00"
+    "updated_at": "2026-03-09T12:22:12.822987+00:00"
   },
   {
     "operator": "Unknown",
@@ -1201,7 +1201,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302688+00:00"
+    "updated_at": "2026-03-09T12:22:12.822990+00:00"
   },
   {
     "operator": "Unknown",
@@ -1215,7 +1215,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302691+00:00"
+    "updated_at": "2026-03-09T12:22:12.822993+00:00"
   },
   {
     "operator": "Unknown",
@@ -1229,7 +1229,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302696+00:00"
+    "updated_at": "2026-03-09T12:22:12.822998+00:00"
   },
   {
     "operator": "Unknown",
@@ -1243,7 +1243,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302699+00:00"
+    "updated_at": "2026-03-09T12:22:12.823001+00:00"
   },
   {
     "operator": "Unknown",
@@ -1257,7 +1257,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302702+00:00"
+    "updated_at": "2026-03-09T12:22:12.823004+00:00"
   },
   {
     "operator": "Unknown",
@@ -1271,7 +1271,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302705+00:00"
+    "updated_at": "2026-03-09T12:22:12.823007+00:00"
   },
   {
     "operator": "Unknown",
@@ -1285,7 +1285,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302708+00:00"
+    "updated_at": "2026-03-09T12:22:12.823010+00:00"
   },
   {
     "operator": "Unknown",
@@ -1299,7 +1299,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302715+00:00"
+    "updated_at": "2026-03-09T12:22:12.823016+00:00"
   },
   {
     "operator": "Unknown",
@@ -1313,7 +1313,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302731+00:00"
+    "updated_at": "2026-03-09T12:22:12.823031+00:00"
   },
   {
     "operator": "Unknown",
@@ -1327,7 +1327,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302734+00:00"
+    "updated_at": "2026-03-09T12:22:12.823035+00:00"
   },
   {
     "operator": "Unknown",
@@ -1341,7 +1341,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302737+00:00"
+    "updated_at": "2026-03-09T12:22:12.823038+00:00"
   },
   {
     "operator": "Unknown",
@@ -1355,7 +1355,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302740+00:00"
+    "updated_at": "2026-03-09T12:22:12.823041+00:00"
   },
   {
     "operator": "Unknown",
@@ -1369,7 +1369,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302743+00:00"
+    "updated_at": "2026-03-09T12:22:12.823044+00:00"
   },
   {
     "operator": "Unknown",
@@ -1383,7 +1383,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302746+00:00"
+    "updated_at": "2026-03-09T12:22:12.823047+00:00"
   },
   {
     "operator": "Unknown",
@@ -1397,7 +1397,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302749+00:00"
+    "updated_at": "2026-03-09T12:22:12.823050+00:00"
   },
   {
     "operator": "Unknown",
@@ -1411,7 +1411,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302752+00:00"
+    "updated_at": "2026-03-09T12:22:12.823052+00:00"
   },
   {
     "operator": "Unknown",
@@ -1425,7 +1425,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302755+00:00"
+    "updated_at": "2026-03-09T12:22:12.823055+00:00"
   },
   {
     "operator": "Unknown",
@@ -1439,7 +1439,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302760+00:00"
+    "updated_at": "2026-03-09T12:22:12.823060+00:00"
   },
   {
     "operator": "Unknown",
@@ -1453,7 +1453,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302763+00:00"
+    "updated_at": "2026-03-09T12:22:12.823063+00:00"
   },
   {
     "operator": "Unknown",
@@ -1467,7 +1467,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302766+00:00"
+    "updated_at": "2026-03-09T12:22:12.823066+00:00"
   },
   {
     "operator": "Unknown",
@@ -1481,7 +1481,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302770+00:00"
+    "updated_at": "2026-03-09T12:22:12.823070+00:00"
   },
   {
     "operator": "Unknown",
@@ -1495,7 +1495,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302773+00:00"
+    "updated_at": "2026-03-09T12:22:12.823073+00:00"
   },
   {
     "operator": "Unknown",
@@ -1509,7 +1509,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302776+00:00"
+    "updated_at": "2026-03-09T12:22:12.823076+00:00"
   },
   {
     "operator": "Unknown",
@@ -1523,7 +1523,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302779+00:00"
+    "updated_at": "2026-03-09T12:22:12.823079+00:00"
   },
   {
     "operator": "Unknown",
@@ -1537,7 +1537,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302952+00:00"
+    "updated_at": "2026-03-09T12:22:12.823265+00:00"
   },
   {
     "operator": "Unknown",
@@ -1551,7 +1551,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302956+00:00"
+    "updated_at": "2026-03-09T12:22:12.823269+00:00"
   },
   {
     "operator": "Unknown",
@@ -1565,7 +1565,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302959+00:00"
+    "updated_at": "2026-03-09T12:22:12.823272+00:00"
   },
   {
     "operator": "Unknown",
@@ -1579,7 +1579,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302964+00:00"
+    "updated_at": "2026-03-09T12:22:12.823278+00:00"
   },
   {
     "operator": "Unknown",
@@ -1593,7 +1593,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302967+00:00"
+    "updated_at": "2026-03-09T12:22:12.823281+00:00"
   },
   {
     "operator": "Unknown",
@@ -1607,7 +1607,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302970+00:00"
+    "updated_at": "2026-03-09T12:22:12.823283+00:00"
   },
   {
     "operator": "Unknown",
@@ -1621,7 +1621,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302973+00:00"
+    "updated_at": "2026-03-09T12:22:12.823286+00:00"
   },
   {
     "operator": "Unknown",
@@ -1635,7 +1635,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302977+00:00"
+    "updated_at": "2026-03-09T12:22:12.823290+00:00"
   },
   {
     "operator": "Unknown",
@@ -1649,7 +1649,7 @@
     "power_kw": 180.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302980+00:00"
+    "updated_at": "2026-03-09T12:22:12.823293+00:00"
   },
   {
     "operator": "Unknown",
@@ -1663,7 +1663,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302983+00:00"
+    "updated_at": "2026-03-09T12:22:12.823296+00:00"
   },
   {
     "operator": "Unknown",
@@ -1677,7 +1677,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302988+00:00"
+    "updated_at": "2026-03-09T12:22:12.823301+00:00"
   },
   {
     "operator": "Unknown",
@@ -1691,7 +1691,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302991+00:00"
+    "updated_at": "2026-03-09T12:22:12.823304+00:00"
   },
   {
     "operator": "Unknown",
@@ -1705,7 +1705,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302994+00:00"
+    "updated_at": "2026-03-09T12:22:12.823307+00:00"
   },
   {
     "operator": "Unknown",
@@ -1719,7 +1719,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.302999+00:00"
+    "updated_at": "2026-03-09T12:22:12.823311+00:00"
   },
   {
     "operator": "Unknown",
@@ -1733,7 +1733,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303002+00:00"
+    "updated_at": "2026-03-09T12:22:12.823314+00:00"
   },
   {
     "operator": "Unknown",
@@ -1747,7 +1747,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303005+00:00"
+    "updated_at": "2026-03-09T12:22:12.823318+00:00"
   },
   {
     "operator": "Unknown",
@@ -1761,7 +1761,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303009+00:00"
+    "updated_at": "2026-03-09T12:22:12.823321+00:00"
   },
   {
     "operator": "Unknown",
@@ -1775,7 +1775,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303013+00:00"
+    "updated_at": "2026-03-09T12:22:12.823325+00:00"
   },
   {
     "operator": "Unknown",
@@ -1789,7 +1789,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303016+00:00"
+    "updated_at": "2026-03-09T12:22:12.823328+00:00"
   },
   {
     "operator": "Unknown",
@@ -1803,7 +1803,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303019+00:00"
+    "updated_at": "2026-03-09T12:22:12.823331+00:00"
   },
   {
     "operator": "Unknown",
@@ -1817,7 +1817,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303022+00:00"
+    "updated_at": "2026-03-09T12:22:12.823334+00:00"
   },
   {
     "operator": "Unknown",
@@ -1831,7 +1831,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303025+00:00"
+    "updated_at": "2026-03-09T12:22:12.823337+00:00"
   },
   {
     "operator": "Unknown",
@@ -1845,7 +1845,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303028+00:00"
+    "updated_at": "2026-03-09T12:22:12.823340+00:00"
   },
   {
     "operator": "Unknown",
@@ -1859,7 +1859,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303033+00:00"
+    "updated_at": "2026-03-09T12:22:12.823345+00:00"
   },
   {
     "operator": "Unknown",
@@ -1873,7 +1873,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303036+00:00"
+    "updated_at": "2026-03-09T12:22:12.823348+00:00"
   },
   {
     "operator": "Unknown",
@@ -1887,7 +1887,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303039+00:00"
+    "updated_at": "2026-03-09T12:22:12.823351+00:00"
   },
   {
     "operator": "Unknown",
@@ -1901,7 +1901,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303042+00:00"
+    "updated_at": "2026-03-09T12:22:12.823354+00:00"
   },
   {
     "operator": "Unknown",
@@ -1915,7 +1915,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303047+00:00"
+    "updated_at": "2026-03-09T12:22:12.823359+00:00"
   },
   {
     "operator": "Unknown",
@@ -1929,7 +1929,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303050+00:00"
+    "updated_at": "2026-03-09T12:22:12.823362+00:00"
   },
   {
     "operator": "Unknown",
@@ -1943,7 +1943,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303053+00:00"
+    "updated_at": "2026-03-09T12:22:12.823366+00:00"
   },
   {
     "operator": "Unknown",
@@ -1957,7 +1957,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303056+00:00"
+    "updated_at": "2026-03-09T12:22:12.823369+00:00"
   },
   {
     "operator": "Unknown",
@@ -1971,7 +1971,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303059+00:00"
+    "updated_at": "2026-03-09T12:22:12.823372+00:00"
   },
   {
     "operator": "Unknown",
@@ -1985,7 +1985,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303062+00:00"
+    "updated_at": "2026-03-09T12:22:12.823374+00:00"
   },
   {
     "operator": "Unknown",
@@ -1999,7 +1999,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303067+00:00"
+    "updated_at": "2026-03-09T12:22:12.823379+00:00"
   },
   {
     "operator": "Unknown",
@@ -2013,7 +2013,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303070+00:00"
+    "updated_at": "2026-03-09T12:22:12.823382+00:00"
   },
   {
     "operator": "Unknown",
@@ -2027,7 +2027,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303073+00:00"
+    "updated_at": "2026-03-09T12:22:12.823385+00:00"
   },
   {
     "operator": "Unknown",
@@ -2041,7 +2041,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303076+00:00"
+    "updated_at": "2026-03-09T12:22:12.823388+00:00"
   },
   {
     "operator": "Unknown",
@@ -2055,7 +2055,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303079+00:00"
+    "updated_at": "2026-03-09T12:22:12.823391+00:00"
   },
   {
     "operator": "Unknown",
@@ -2069,7 +2069,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303082+00:00"
+    "updated_at": "2026-03-09T12:22:12.823394+00:00"
   },
   {
     "operator": "Unknown",
@@ -2083,7 +2083,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303085+00:00"
+    "updated_at": "2026-03-09T12:22:12.823397+00:00"
   },
   {
     "operator": "Unknown",
@@ -2097,7 +2097,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303089+00:00"
+    "updated_at": "2026-03-09T12:22:12.823400+00:00"
   },
   {
     "operator": "Unknown",
@@ -2111,7 +2111,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303092+00:00"
+    "updated_at": "2026-03-09T12:22:12.823403+00:00"
   },
   {
     "operator": "Unknown",
@@ -2125,7 +2125,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303095+00:00"
+    "updated_at": "2026-03-09T12:22:12.823406+00:00"
   },
   {
     "operator": "Unknown",
@@ -2139,7 +2139,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303102+00:00"
+    "updated_at": "2026-03-09T12:22:12.823413+00:00"
   },
   {
     "operator": "Unknown",
@@ -2153,7 +2153,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303105+00:00"
+    "updated_at": "2026-03-09T12:22:12.823416+00:00"
   },
   {
     "operator": "Unknown",
@@ -2167,7 +2167,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303108+00:00"
+    "updated_at": "2026-03-09T12:22:12.823419+00:00"
   },
   {
     "operator": "Unknown",
@@ -2181,7 +2181,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303111+00:00"
+    "updated_at": "2026-03-09T12:22:12.823422+00:00"
   },
   {
     "operator": "Unknown",
@@ -2195,7 +2195,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303114+00:00"
+    "updated_at": "2026-03-09T12:22:12.823425+00:00"
   },
   {
     "operator": "Unknown",
@@ -2209,7 +2209,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303117+00:00"
+    "updated_at": "2026-03-09T12:22:12.823428+00:00"
   },
   {
     "operator": "Unknown",
@@ -2223,7 +2223,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303120+00:00"
+    "updated_at": "2026-03-09T12:22:12.823431+00:00"
   },
   {
     "operator": "Unknown",
@@ -2237,7 +2237,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303123+00:00"
+    "updated_at": "2026-03-09T12:22:12.823434+00:00"
   },
   {
     "operator": "Unknown",
@@ -2251,7 +2251,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303126+00:00"
+    "updated_at": "2026-03-09T12:22:12.823437+00:00"
   },
   {
     "operator": "Unknown",
@@ -2265,7 +2265,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303129+00:00"
+    "updated_at": "2026-03-09T12:22:12.823440+00:00"
   },
   {
     "operator": "Unknown",
@@ -2279,7 +2279,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303138+00:00"
+    "updated_at": "2026-03-09T12:22:12.823445+00:00"
   },
   {
     "operator": "Unknown",
@@ -2293,7 +2293,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303141+00:00"
+    "updated_at": "2026-03-09T12:22:12.823448+00:00"
   },
   {
     "operator": "Unknown",
@@ -2307,7 +2307,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303144+00:00"
+    "updated_at": "2026-03-09T12:22:12.823451+00:00"
   },
   {
     "operator": "Unknown",
@@ -2321,7 +2321,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303147+00:00"
+    "updated_at": "2026-03-09T12:22:12.823454+00:00"
   },
   {
     "operator": "Unknown",
@@ -2335,7 +2335,7 @@
     "power_kw": 23.9,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303151+00:00"
+    "updated_at": "2026-03-09T12:22:12.823458+00:00"
   },
   {
     "operator": "Unknown",
@@ -2349,7 +2349,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303154+00:00"
+    "updated_at": "2026-03-09T12:22:12.823461+00:00"
   },
   {
     "operator": "Unknown",
@@ -2363,7 +2363,7 @@
     "power_kw": 50.0,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303157+00:00"
+    "updated_at": "2026-03-09T12:22:12.823464+00:00"
   },
   {
     "operator": "Unknown",
@@ -2377,7 +2377,7 @@
     "power_kw": 3.8,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303160+00:00"
+    "updated_at": "2026-03-09T12:22:12.823467+00:00"
   },
   {
     "operator": "Unknown",
@@ -2391,6 +2391,6 @@
     "power_kw": 3.8,
     "price_eur_kwh": null,
     "price_source": null,
-    "updated_at": "2026-03-09T12:15:47.303163+00:00"
+    "updated_at": "2026-03-09T12:22:12.823470+00:00"
   }
 ]
