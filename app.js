@@ -13,17 +13,10 @@ const els = {
   powerTypeFilter: document.getElementById("powerTypeFilter"),
   searchFilter: document.getElementById("searchFilter"),
   sortBy: document.getElementById("sortBy"),
-  onlyPricedFilter: document.getElementById("onlyPricedFilter"),
   resetBtn: document.getElementById("resetBtn"),
-  locateBtn: document.getElementById("locateBtn"),
-  consumptionInput: document.getElementById("consumptionInput"),
   stats: document.getElementById("stats"),
   tableBody: document.getElementById("tableBody"),
   tableCount: document.getElementById("tableCount"),
-  metricStations: document.getElementById("metricStations"),
-  metricAvg: document.getElementById("metricAvg"),
-  metricMin: document.getElementById("metricMin"),
-  metricCost100: document.getElementById("metricCost100"),
   cheapestNearby: document.getElementById("cheapestNearby"),
 };
 
@@ -293,21 +286,38 @@ function locateAndShowCheapestNearby() {
 }
 
 function attachEvents() {
-  [els.cityFilter, els.searchFilter, els.consumptionInput].forEach((el) => el.addEventListener("input", applyFilters));
-  [els.operatorFilter, els.powerTypeFilter, els.sortBy, els.onlyPricedFilter].forEach((el) => el.addEventListener("change", applyFilters));
+  [
+    els.cityFilter,
+    els.operatorFilter,
+    els.powerTypeFilter,
+    els.searchFilter,
+    els.sortBy,
+  ]
+    .filter(Boolean)
+    .forEach((el) => el.addEventListener("input", applyFilters));
 
-  els.resetBtn.addEventListener("click", () => {
-    els.cityFilter.value = "";
-    els.operatorFilter.value = "";
-    els.powerTypeFilter.value = "";
-    els.searchFilter.value = "";
-    els.sortBy.value = "priceAsc";
-    els.onlyPricedFilter.checked = false;
-    els.consumptionInput.value = "20";
-    applyFilters();
-  });
+  if (els.operatorFilter) {
+    els.operatorFilter.addEventListener("change", applyFilters);
+  }
 
-  els.locateBtn.addEventListener("click", locateAndShowCheapestNearby);
+  if (els.powerTypeFilter) {
+    els.powerTypeFilter.addEventListener("change", applyFilters);
+  }
+
+  if (els.sortBy) {
+    els.sortBy.addEventListener("change", applyFilters);
+  }
+
+  if (els.resetBtn) {
+    els.resetBtn.addEventListener("click", () => {
+      if (els.cityFilter) els.cityFilter.value = "";
+      if (els.operatorFilter) els.operatorFilter.value = "";
+      if (els.powerTypeFilter) els.powerTypeFilter.value = "";
+      if (els.searchFilter) els.searchFilter.value = "";
+      if (els.sortBy) els.sortBy.value = "priceAsc";
+      applyFilters();
+    });
+  }
 }
 
 attachEvents();
