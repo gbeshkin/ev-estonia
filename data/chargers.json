@@ -1,6 +1,7 @@
 [
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Elektrum Drive Kose Konsum",
     "city": "Kose",
     "address": "Pikk tn 23",
@@ -8,10 +9,13 @@
     "lng": 25.167356853819115,
     "power_type": "HPC",
     "power_kw": 100.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302310+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Alexela Kose tankla",
     "city": "Kose",
     "address": "Ujula tn 10",
@@ -19,10 +23,13 @@
     "lng": 25.158586687051525,
     "power_type": "HPC",
     "power_kw": 180.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302336+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Elelevi",
     "city": "86005 Pärnu",
     "address": "Ikla",
@@ -30,10 +37,13 @@
     "lng": 24.385049523538555,
     "power_type": "HPC",
     "power_kw": 150.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302342+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tesla Supercharger",
     "city": "Pärnu",
     "address": "Lai 5",
@@ -41,10 +51,13 @@
     "lng": 24.50117975034641,
     "power_type": "HPC",
     "power_kw": 250.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302349+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tesla Supercharger",
     "city": "Pärnu",
     "address": "Lai 5",
@@ -52,10 +65,13 @@
     "lng": 24.501230418220075,
     "power_type": "HPC",
     "power_kw": 250.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302355+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Eleport Linnamäe Prisma",
     "city": "Tallinn",
     "address": "Linnamäe tee 95",
@@ -63,10 +79,13 @@
     "lng": 24.888387245394938,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302359+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinna Teaduspark",
     "city": "Tallinn",
     "address": "Akadeemia tee 21/1",
@@ -74,10 +93,13 @@
     "lng": 24.661800595660026,
     "power_type": "AC",
     "power_kw": 22.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302363+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Eleport Kärberi keskus",
     "city": "Tallinn",
     "address": "K. Kärberi 20",
@@ -85,10 +107,13 @@
     "lng": 24.883627128250424,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302374+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Home",
     "city": "Viimsi Vald",
     "address": "Eha tee 19, Kelvingi Küla",
@@ -96,10 +121,13 @@
     "lng": 24.8362081743495,
     "power_type": "AC",
     "power_kw": 11.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302378+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Vonk Viljandi Centrum",
     "city": "Viljandi",
     "address": "Uus 4",
@@ -107,10 +135,13 @@
     "lng": 25.59929574708076,
     "power_type": "HPC",
     "power_kw": 160.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302382+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Elelevi Just Rest",
     "city": "Viljandi",
     "address": "Ranna pst 6",
@@ -118,10 +149,13 @@
     "lng": 25.606581730555092,
     "power_type": "AC",
     "power_kw": 22.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302385+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "eTerminal Mustakivi",
     "city": "Tallinn",
     "address": "Osmussaare tee 15",
@@ -129,10 +163,13 @@
     "lng": 24.87134695936288,
     "power_type": "HPC",
     "power_kw": 120.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302388+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "eTerminal Jõhvi",
     "city": "Jõhvi",
     "address": "Puru tee 5b",
@@ -140,10 +177,13 @@
     "lng": 27.41931576525633,
     "power_type": "HPC",
     "power_kw": 150.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302394+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Eleport Kangru tee",
     "city": "Vaela",
     "address": "Kangru tee 17",
@@ -151,10 +191,13 @@
     "lng": 24.807633822308844,
     "power_type": "AC",
     "power_kw": 22.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302397+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Alexela Tammemäe",
     "city": "Tammemäe",
     "address": "Männiku tee 146",
@@ -162,10 +205,13 @@
     "lng": 24.682049515821177,
     "power_type": "HPC",
     "power_kw": 300.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302401+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "IONITY Märjamaa",
     "city": "Märjamaa",
     "address": "Orgita",
@@ -173,10 +219,13 @@
     "lng": 24.45761,
     "power_type": "HPC",
     "power_kw": 350.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302404+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "IONITY Häädemeeste",
     "city": "Arumetsa",
     "address": "Tõitoja-Häädemeeste",
@@ -184,10 +233,13 @@
     "lng": 24.512231,
     "power_type": "HPC",
     "power_kw": 350.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302407+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Level2.ee KOPRA",
     "city": "Tuhalaane",
     "address": "Kopra talu",
@@ -195,10 +247,13 @@
     "lng": 25.616083,
     "power_type": "AC",
     "power_kw": 22.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302410+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Level2.ee VOLTA",
     "city": "Tallinn",
     "address": "Volta 3",
@@ -206,10 +261,13 @@
     "lng": 24.724204,
     "power_type": "AC",
     "power_kw": 22.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302413+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Villa Ammende hotel and restaurant",
     "city": "Pärnu",
     "address": "Mere Boulevard 7",
@@ -217,10 +275,13 @@
     "lng": 24.491924,
     "power_type": "AC",
     "power_kw": 22.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302416+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn-Lasnamäe-3",
     "city": "Tallinn",
     "address": "Juhan Smuuli street",
@@ -228,10 +289,13 @@
     "lng": 24.837679705538456,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302420+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Susi",
     "city": "Tallinn",
     "address": "Peterburi tee",
@@ -239,10 +303,13 @@
     "lng": 24.822564563683507,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302423+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Ülemiste",
     "city": "Tallinn",
     "address": "Suur-Sõjamäe",
@@ -250,10 +317,13 @@
     "lng": 24.789453587450687,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302429+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Gonsiori",
     "city": "Tallinn",
     "address": "Gonsiori",
@@ -261,10 +331,13 @@
     "lng": 24.78069259875202,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302432+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Staadioni",
     "city": "Tallinn",
     "address": "Staadioni",
@@ -272,10 +345,13 @@
     "lng": 24.762477717331883,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302435+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rävala",
     "city": "Tallinn",
     "address": "Rävala street 5",
@@ -283,10 +359,13 @@
     "lng": 24.756364962986943,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302438+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Pärnu road-2",
     "city": "Tallinn",
     "address": "Pärnu road 137A",
@@ -294,10 +373,13 @@
     "lng": 24.737145147242252,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302441+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Pärnu road-1",
     "city": "Tallinn",
     "address": "Pärnu road 150",
@@ -305,10 +387,13 @@
     "lng": 24.735632381357853,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302444+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Järve",
     "city": "Tallinn",
     "address": "Pärnu mnt",
@@ -316,10 +401,13 @@
     "lng": 24.720890066515047,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302447+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tondi",
     "city": "Tallinn",
     "address": "A. H. Tammsaare street 47",
@@ -327,10 +415,13 @@
     "lng": 24.71649750224561,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302450+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Siili",
     "city": "Tallinn",
     "address": "Sõpruse street",
@@ -338,10 +429,13 @@
     "lng": 24.703292093209264,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302454+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "E.Vilde",
     "city": "Tallinn",
     "address": "Eduard Vilde street 66",
@@ -349,10 +443,13 @@
     "lng": 24.689111254147527,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302457+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Sõpruse",
     "city": "Tallinn",
     "address": "Sõpruse street 233",
@@ -360,10 +457,13 @@
     "lng": 24.68794449318512,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302462+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Ehitajate tee",
     "city": "Tallinn",
     "address": "Ehitajate tee",
@@ -371,10 +471,13 @@
     "lng": 24.67044576161289,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302466+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Raja",
     "city": "Tallinn",
     "address": "Raja",
@@ -382,10 +485,13 @@
     "lng": 24.66451807964905,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302496+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Õismäe",
     "city": "Tallinn",
     "address": "Õismäe street 5",
@@ -393,10 +499,13 @@
     "lng": 24.654130778231327,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302503+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Haabersti",
     "city": "Tallinn",
     "address": "Kaeravälja",
@@ -404,10 +513,13 @@
     "lng": 24.642001829065983,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302509+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn-Kopli",
     "city": "Tallinn",
     "address": "Sõle",
@@ -415,10 +527,13 @@
     "lng": 24.697562894753453,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302515+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn-Lasnamäe-2",
     "city": "Tallinn",
     "address": "Tähesaju tee",
@@ -426,10 +541,13 @@
     "lng": 24.8616416668215,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302522+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn-Lasnamäe-1",
     "city": "Tallinn",
     "address": "Osmussaare tee 10",
@@ -437,10 +555,13 @@
     "lng": 24.873143873133365,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302527+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn Merivälja tee 20 (CH10002)",
     "city": "Tallinn",
     "address": "Merivälja tee 20",
@@ -448,10 +569,13 @@
     "lng": 24.83419998639011,
     "power_type": "DC",
     "power_kw": 47.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302530+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Enefit Volt Tallinn Pirita Selver",
     "city": "Tallinn",
     "address": "Rummu tee 4",
@@ -459,10 +583,13 @@
     "lng": 24.828839146115655,
     "power_type": "DC",
     "power_kw": 47.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302533+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viimsi",
     "city": "Viimsi",
     "address": "Pargi tee",
@@ -470,10 +597,13 @@
     "lng": 24.8298154687068,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302540+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tabasalu",
     "city": "Tabasalu",
     "address": "Klooga mnt",
@@ -481,10 +611,13 @@
     "lng": 24.54431220047855,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302543+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Jüri-2",
     "city": "Jüri",
     "address": "Haava",
@@ -492,10 +625,13 @@
     "lng": 24.930244526795384,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302546+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Jüri-1",
     "city": "Jüri",
     "address": "Aleviku street",
@@ -503,10 +639,13 @@
     "lng": 24.892552337565128,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302549+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tänassilma",
     "city": "Laagri",
     "address": "Jälgimäe tee",
@@ -514,10 +653,13 @@
     "lng": 24.622684559740726,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302552+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Laagri",
     "city": "Laagri",
     "address": "Pärnu mnt",
@@ -525,10 +667,13 @@
     "lng": 24.616198978342716,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302555+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Enefit VOLT Saue",
     "city": "Saue linn",
     "address": "Tule",
@@ -536,10 +681,13 @@
     "lng": 24.562111339501378,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302558+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Keila",
     "city": "Keila",
     "address": "Tallinn — Paldiski",
@@ -547,10 +695,13 @@
     "lng": 24.436034104756352,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302563+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Paldiski",
     "city": "Paldiski",
     "address": "Tallinna mnt",
@@ -558,10 +709,13 @@
     "lng": 24.104767880331117,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302566+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Padise",
     "city": "Padise",
     "address": "Keila — Haapsalu",
@@ -569,10 +723,13 @@
     "lng": 24.144328675188724,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302569+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Nissi",
     "city": "Nissi",
     "address": "Ääsmäe — Haapsalu — Rohuküla",
@@ -580,10 +737,13 @@
     "lng": 24.302207968167302,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302574+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kernu",
     "city": "Kernu",
     "address": "Kernu invakodu road",
@@ -591,10 +751,13 @@
     "lng": 24.504425964274112,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302577+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Maardu",
     "city": "Maardu",
     "address": "Keemikute",
@@ -602,10 +765,13 @@
     "lng": 25.015982232012455,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302580+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Jõelähtme",
     "city": "Jõelähtme",
     "address": "Kivisilla road",
@@ -613,10 +779,13 @@
     "lng": 25.137720993696355,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302583+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kuusalu",
     "city": "Kuusalu",
     "address": "Kuusalu tee",
@@ -624,10 +793,13 @@
     "lng": 25.43485208666926,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302586+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Loksa",
     "city": "Loksa",
     "address": "Tallinna",
@@ -635,10 +807,13 @@
     "lng": 25.721498421369695,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302590+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-10",
     "city": "Tartu",
     "address": "Ringtee 61",
@@ -646,10 +821,13 @@
     "lng": 26.67740601645756,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302593+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-9",
     "city": "Tartu",
     "address": "Lõunakeskuse",
@@ -657,10 +835,13 @@
     "lng": 26.675714436625192,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302596+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-8",
     "city": "Tartu",
     "address": "Ludvig Puusepa",
@@ -668,10 +849,13 @@
     "lng": 26.700942400563243,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302601+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-7",
     "city": "Tartu",
     "address": "Surnuaia",
@@ -679,10 +863,13 @@
     "lng": 26.730608526323984,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302606+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-6",
     "city": "Tartu",
     "address": "Ujula",
@@ -690,10 +877,13 @@
     "lng": 26.724396530245492,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302613+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-5",
     "city": "Tartu linn",
     "address": "Kalda tee",
@@ -701,10 +891,13 @@
     "lng": 26.751872185338023,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302615+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-4",
     "city": "Tartu",
     "address": "Väike-Turu",
@@ -712,10 +905,13 @@
     "lng": 26.734529021847727,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302618+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-3",
     "city": "Tartu",
     "address": "Väike-Turu",
@@ -723,10 +919,13 @@
     "lng": 26.736391368960092,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302622+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-2",
     "city": "Tartu",
     "address": "Rebase",
@@ -734,10 +933,13 @@
     "lng": 26.737814727850044,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302625+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tartu-1",
     "city": "Tartu",
     "address": "Väike-Tähe",
@@ -745,10 +947,13 @@
     "lng": 26.721403184984872,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302628+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Alatskivi",
     "city": "Alatskivi",
     "address": "Tartu road",
@@ -756,10 +961,13 @@
     "lng": 27.13415760145063,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302631+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Aovere",
     "city": "Aovere",
     "address": "Aovere — Luunja",
@@ -767,10 +975,13 @@
     "lng": 26.8084024225359,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302634+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Laeva",
     "city": "Laeva vald",
     "address": "Tallinn — Tartu — Võru — Luhamaa",
@@ -778,10 +989,13 @@
     "lng": 26.359792235959056,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302637+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Puhja",
     "city": "Puhja",
     "address": "Viljandi road",
@@ -789,10 +1003,13 @@
     "lng": 26.313068154919627,
     "power_type": "DC",
     "power_kw": 47.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302640+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kambja",
     "city": "Kambja",
     "address": "Võru road",
@@ -800,10 +1017,13 @@
     "lng": 26.69047731504316,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302645+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Elva",
     "city": "Elva",
     "address": "Valga mnt",
@@ -811,10 +1031,13 @@
     "lng": 26.405943218325326,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302648+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rõngu",
     "city": "Rõngu",
     "address": "Valga road",
@@ -822,10 +1045,13 @@
     "lng": 26.247853818987558,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302651+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rakvere-3",
     "city": "Rakvere",
     "address": "Põhjakeskuse road",
@@ -833,10 +1059,13 @@
     "lng": 26.33861676746494,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302654+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rakvere-2",
     "city": "Rakvere",
     "address": "Lõuna põik street",
@@ -844,10 +1073,13 @@
     "lng": 26.376226702271765,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302657+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rakvere-1",
     "city": "Rakvere",
     "address": "Laada street 14",
@@ -855,10 +1087,13 @@
     "lng": 26.363547900258368,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302660+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viitna",
     "city": "Viitna",
     "address": "Loobu — Rõmeda road",
@@ -866,10 +1101,13 @@
     "lng": 26.011504123887452,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302663+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Võsu",
     "city": "Võsu",
     "address": "Mere street 6",
@@ -877,10 +1115,13 @@
     "lng": 25.966192717860633,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302666+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kunda",
     "city": "Kunda",
     "address": "Kasemäe",
@@ -888,10 +1129,13 @@
     "lng": 26.512269015620642,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302669+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Roela",
     "city": "Roela",
     "address": "Tartu road",
@@ -899,10 +1143,13 @@
     "lng": 26.58789832423975,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302672+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Väike-Maarja",
     "city": "Väike-Maarja vald",
     "address": "Pikk",
@@ -910,10 +1157,13 @@
     "lng": 26.251855085599917,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302677+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tapa",
     "city": "Tapa",
     "address": "Pikk street 15",
@@ -921,10 +1171,13 @@
     "lng": 25.96373432004795,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302680+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Paide-2",
     "city": "Paide",
     "address": "Pärnu",
@@ -932,10 +1185,13 @@
     "lng": 25.560347269037827,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302685+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Paide-1",
     "city": "Paide",
     "address": "Tallinna road",
@@ -943,10 +1199,13 @@
     "lng": 25.570813248613938,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302688+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Mäeküla",
     "city": "Mäeküla",
     "address": "Tallinn — Tartu — Võru — Luhamaa road",
@@ -954,10 +1213,13 @@
     "lng": 25.690707991579636,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302691+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Türi",
     "city": "Türi",
     "address": "Wiedemanni street 4A",
@@ -965,10 +1227,13 @@
     "lng": 25.431957076025007,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302696+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Järva-Jaani",
     "city": "Järva-Jaani",
     "address": "Jaani street",
@@ -976,10 +1241,13 @@
     "lng": 25.882457154851746,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302699+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Seidla ",
     "city": "Albu vald",
     "address": "Seidla — Kaalepi road",
@@ -987,10 +1255,13 @@
     "lng": 25.690830281536837,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302702+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Märjandi",
     "city": "Albu",
     "address": "Pärnu — Rakvere — Sõmeru road",
@@ -998,10 +1269,13 @@
     "lng": 25.761089852503137,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302705+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Jõgeva",
     "city": "Jõgeva",
     "address": "Kesk street",
@@ -1009,10 +1283,13 @@
     "lng": 26.398232832115582,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302708+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Mustvee",
     "city": "Mustvee",
     "address": "Narva road",
@@ -1020,10 +1297,13 @@
     "lng": 26.95007723796288,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302715+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Põltsamaa Olerex",
     "city": "Põltsamaa",
     "address": "Tallinn — Tartu — Võru — Luhamaa road",
@@ -1031,10 +1311,13 @@
     "lng": 25.98966967556737,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302731+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Põltsamaa-1",
     "city": "Põltsamaa",
     "address": "Tallinn — Tartu — Võru — Luhamaa road",
@@ -1042,10 +1325,13 @@
     "lng": 25.991569288569963,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302734+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tabivere",
     "city": "Tabivere",
     "address": "Tuuliku street",
@@ -1053,10 +1339,13 @@
     "lng": 26.600379799305404,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302737+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Jõhvi-2",
     "city": "Jõhvi",
     "address": "Tallinna road",
@@ -1064,10 +1353,13 @@
     "lng": 27.46288227078504,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302740+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Jõhvi-1",
     "city": "Jõhvi",
     "address": "Tartu road",
@@ -1075,10 +1367,13 @@
     "lng": 27.40866588587006,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302743+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kohtla-Järve",
     "city": "Kohtla-Järve",
     "address": "Järveküla tee",
@@ -1086,10 +1381,13 @@
     "lng": 27.287035753712654,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302746+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kiviõli",
     "city": "Kiviõli",
     "address": "Vabaduse road",
@@ -1097,10 +1395,13 @@
     "lng": 26.96796821588715,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302749+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rannu",
     "city": "Rannu",
     "address": "Tallinna road",
@@ -1108,10 +1409,13 @@
     "lng": 26.854296197836003,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302752+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Iisaku",
     "city": "Iisaku",
     "address": "Tartu road",
@@ -1119,10 +1423,13 @@
     "lng": 27.316701879473396,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302755+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Sillamäe",
     "city": "Sillamäe",
     "address": "Tallinna road",
@@ -1130,10 +1437,13 @@
     "lng": 27.77292059896946,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302760+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Narva-2",
     "city": "Narva",
     "address": "Tallinna road",
@@ -1141,10 +1451,13 @@
     "lng": 28.17338513372898,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302763+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Narva-1",
     "city": "Narva",
     "address": "Rahvavälja street",
@@ -1152,10 +1465,13 @@
     "lng": 28.18698929781159,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302766+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viljandi-4",
     "city": "Viljandi",
     "address": "Pärna street 3",
@@ -1163,10 +1479,13 @@
     "lng": 25.57832883846232,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302770+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viljandi-3",
     "city": "Viljandi",
     "address": "Tallinna road",
@@ -1174,10 +1493,13 @@
     "lng": 25.59684055102708,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302773+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viljandi-2",
     "city": "Viljandi",
     "address": "Metsküla road",
@@ -1185,10 +1507,13 @@
     "lng": 25.562489500132422,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302776+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viljandi-1",
     "city": "Viljandi",
     "address": "Tasuja road",
@@ -1196,10 +1521,13 @@
     "lng": 25.59515165332187,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302779+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Võhma",
     "city": "Võhma",
     "address": "Põltsamaa — Võhma road",
@@ -1207,10 +1535,13 @@
     "lng": 25.573050251039156,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302952+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tänassilma",
     "city": "Viljandi vald",
     "address": "Kruusaaugu road",
@@ -1218,10 +1549,13 @@
     "lng": 25.820521585226295,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302956+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Karksi-Nuia",
     "city": "Viljandi maakond",
     "address": "Pärnu road",
@@ -1229,10 +1563,13 @@
     "lng": 25.545968449770022,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302959+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Mustla",
     "city": "Mustla",
     "address": "Posti street",
@@ -1240,10 +1577,13 @@
     "lng": 25.866073953576212,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302964+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Valga-2",
     "city": "Valga linn",
     "address": "Jõhvi-Tartu-Valga road",
@@ -1251,10 +1591,13 @@
     "lng": 26.04066396731162,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302967+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Valga-1",
     "city": "Valga linn",
     "address": "Riia street",
@@ -1262,10 +1605,13 @@
     "lng": 26.027472863417305,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302970+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tõrva",
     "city": "Tõrva",
     "address": "Valga-Uulu road",
@@ -1273,10 +1619,13 @@
     "lng": 25.916309095225092,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302973+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Sangaste",
     "city": "Sangaste",
     "address": "Valga road",
@@ -1284,10 +1633,13 @@
     "lng": 26.327735815568207,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302977+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Otepää",
     "city": "Otepää",
     "address": "Tartu road",
@@ -1295,10 +1647,13 @@
     "lng": 26.49805821718394,
     "power_type": "HPC",
     "power_kw": 180.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302980+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Võru",
     "city": "Võru",
     "address": "Tallinna road",
@@ -1306,10 +1661,13 @@
     "lng": 26.975987031510385,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302983+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Meegomäe",
     "city": "Võru vald",
     "address": "Meegomäe road",
@@ -1317,10 +1675,13 @@
     "lng": 26.997552696240298,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302988+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rõuge",
     "city": "Rõuge",
     "address": "Haanja road",
@@ -1328,10 +1689,13 @@
     "lng": 26.91831666575718,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302991+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Antsla",
     "city": "Võru maakond",
     "address": "Kreutzwaldi street",
@@ -1339,10 +1703,13 @@
     "lng": 26.532795611475656,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302994+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Varstu",
     "city": "Varstu",
     "address": "Kesk street 17",
@@ -1350,10 +1717,13 @@
     "lng": 26.660416904516303,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.302999+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Luhamaa Border Controll Point",
     "city": "Misso vald",
     "address": "Riia — Pihkva road",
@@ -1361,10 +1731,13 @@
     "lng": 27.370422678569874,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303002+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Ahja",
     "city": "Ahja vald",
     "address": "Tartu road",
@@ -1372,10 +1745,13 @@
     "lng": 27.07475382430085,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303005+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Põlva",
     "city": "Põlva linn",
     "address": "Kesk street 10",
@@ -1383,10 +1759,13 @@
     "lng": 27.056305049265237,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303009+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Räpina",
     "city": "Põlva maakond",
     "address": "Kooli",
@@ -1394,10 +1773,13 @@
     "lng": 27.464023745728568,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303013+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Värska",
     "city": "Värska vald",
     "address": "Pikk street",
@@ -1405,10 +1787,13 @@
     "lng": 27.63421355705326,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303016+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kohila",
     "city": "Kohila vald",
     "address": "Liiva street",
@@ -1416,10 +1801,13 @@
     "lng": 24.7552545829592,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303019+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rapla",
     "city": "Rapla vald",
     "address": "Tallinna road 4",
@@ -1427,10 +1815,13 @@
     "lng": 24.794690795160232,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303022+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Järvakandi",
     "city": "Järvakandi vald",
     "address": "Tallinna mnt",
@@ -1438,10 +1829,13 @@
     "lng": 24.817669204728183,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303025+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Märjamaa",
     "city": "Märjamaa vald",
     "address": "Oru",
@@ -1449,10 +1843,13 @@
     "lng": 24.429253824927724,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303028+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Pärnu 6",
     "city": "Pärnu",
     "address": "Ehitajate street 2",
@@ -1460,10 +1857,13 @@
     "lng": 24.494551309298327,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303033+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Pärnu 5",
     "city": "Pärnu",
     "address": "Roheline street",
@@ -1471,10 +1871,13 @@
     "lng": 24.497957714788168,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303036+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Pärnu 4",
     "city": "Audru vald",
     "address": "Haapsalu road 43",
@@ -1482,10 +1885,13 @@
     "lng": 24.456860908221056,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303039+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Ringi - Pärnu",
     "city": "Pärnu linn",
     "address": "Ringi street",
@@ -1493,10 +1899,13 @@
     "lng": 24.50454343197576,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303042+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Suurejõe",
     "city": "Pärnu linn",
     "address": "Suur-Jõe street 57",
@@ -1504,10 +1913,13 @@
     "lng": 24.532209523908346,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303047+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Riia street station",
     "city": "Pärnu linn",
     "address": "Riia mnt",
@@ -1515,10 +1927,13 @@
     "lng": 24.55964673397771,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303050+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Marja",
     "city": "Tallinn",
     "address": "Mustamäe street 16",
@@ -1526,10 +1941,13 @@
     "lng": 24.69648464668854,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303053+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tõstamaa",
     "city": "Tõstamaa",
     "address": "Varbla road",
@@ -1537,10 +1955,13 @@
     "lng": 23.9921895988114,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303056+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Halinga",
     "city": "Halinga",
     "address": "Tallinn-Pärnu-Ikla road",
@@ -1548,10 +1969,13 @@
     "lng": 24.5103078667143,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303059+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Vändra",
     "city": "Vändra",
     "address": "Pärnu-Paide road",
@@ -1559,10 +1983,13 @@
     "lng": 25.0351795273869,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303062+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kilingi-Nõmme",
     "city": "Kilingi-Nõmme",
     "address": "Turu street",
@@ -1570,10 +1997,13 @@
     "lng": 24.9506455193878,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303067+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Haapsalu-2",
     "city": "Uuemõisa",
     "address": "Rannarootsi street 1",
@@ -1581,10 +2011,13 @@
     "lng": 23.5716599215584,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303070+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Haapsalu-1",
     "city": "Haapsalu",
     "address": "Tallinna road 1",
@@ -1592,10 +2025,13 @@
     "lng": 23.542595504673,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303073+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Pürksi",
     "city": "Pürksi",
     "address": "Nõmmküla-Aulepa-Österby road",
@@ -1603,10 +2039,13 @@
     "lng": 23.5219519323145,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303076+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Nõva",
     "city": "Nõva",
     "address": "Harju-Risti-Riguldi-Võntküla road",
@@ -1614,10 +2053,13 @@
     "lng": 23.696774795844,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303079+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Risti",
     "city": "Risti",
     "address": "Lihula street",
@@ -1625,10 +2067,13 @@
     "lng": 24.0568667205114,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303082+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Lihula",
     "city": "Lihula",
     "address": "Jaama street ",
@@ -1636,10 +2081,13 @@
     "lng": 23.8348564471909,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303085+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kuressaare-3",
     "city": "Kuressaare",
     "address": "Luha street 2c",
@@ -1647,10 +2095,13 @@
     "lng": 22.4711234168274,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303089+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kuressaare-2",
     "city": "Kuressaare",
     "address": "Raekoja street 6",
@@ -1658,10 +2109,13 @@
     "lng": 22.4878496724079,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303092+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kuressaare-1",
     "city": "Kuressaare",
     "address": "Tallinna street 84",
@@ -1669,10 +2123,13 @@
     "lng": 22.5130999879923,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303095+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Salme - Saaremaa -Estonia",
     "city": "Salme",
     "address": "Sõrve street",
@@ -1680,10 +2137,13 @@
     "lng": 22.2510663312826,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303102+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Lümanda",
     "city": "Lümanda",
     "address": "Mustjala - Kihelkonna - Tehumardi road",
@@ -1691,10 +2151,13 @@
     "lng": 22.0245819057005,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303105+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Leisi",
     "city": "Leisi",
     "address": "Orissaare street 1",
@@ -1702,10 +2165,13 @@
     "lng": 22.6835720504574,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303108+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Orissaare",
     "city": "Orissaare",
     "address": "Kuivastu street 28",
@@ -1713,10 +2179,13 @@
     "lng": 23.0830781425017,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303111+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Vormsi",
     "city": "Vormsi",
     "address": "Hullo street",
@@ -1724,10 +2193,13 @@
     "lng": 23.2426464558193,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303114+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Emmaste",
     "city": "Emmaste",
     "address": "Emmaste-Tohvri road",
@@ -1735,10 +2207,13 @@
     "lng": 22.5961294501169,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303117+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Käina",
     "city": "Käina",
     "address": "Tobiase street",
@@ -1746,10 +2221,13 @@
     "lng": 22.7767297356606,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303120+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Kärdla",
     "city": "Kärdla",
     "address": "Kõrgessaare road 45",
@@ -1757,10 +2235,13 @@
     "lng": 22.7225061981746,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303123+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Rohuküla harbour",
     "city": "Rohuküla",
     "address": "Rohuküla, 90441, Lääne County, Estonia",
@@ -1768,10 +2249,13 @@
     "lng": 23.4254845707758,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303126+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Estonia - Port of Heltermaa",
     "city": "Heltermaa",
     "address": "Heltermaa-Kärdla-Luidja road (local road nr \"80\" )",
@@ -1779,10 +2263,13 @@
     "lng": 23.0471893909773,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303129+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Estonia - Port of Kuivastu",
     "city": "Kuivastu",
     "address": "Risti-Virtsu-Kuivastu-Kuressaare road (also known as  local road \"10\" )",
@@ -1790,10 +2277,13 @@
     "lng": 23.3883704246728,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303138+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Estonia - Port of Virtsu",
     "city": "Virtsu",
     "address": "Tallinna road (also known as Risti-Virtsu-Kuivastu-Kuressaare road)",
@@ -1801,10 +2291,13 @@
     "lng": 23.5122559890308,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303141+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Estonia — Häädemeeste (near E67)",
     "city": "Haademeeste/Häädemeeste parish",
     "address": "Haademeeste / Häädemeeste",
@@ -1812,10 +2305,13 @@
     "lng": 24.5123121017107,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303144+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn harbour C-terminal quickcharger",
     "city": "Tallinn",
     "address": "Kai 25/4",
@@ -1823,10 +2319,13 @@
     "lng": 24.7565179000001,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303147+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Tallinn harbour D-terminal quickcharger",
     "city": "Tallinn",
     "address": "Lootsi 13",
@@ -1834,10 +2333,13 @@
     "lng": 24.762212,
     "power_type": "AC",
     "power_kw": 23.9,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303151+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Viru Shopping centre parking lot quickcharger",
     "city": "Tallinn",
     "address": "Viru väljak 4",
@@ -1845,10 +2347,13 @@
     "lng": 24.7539243,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303154+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Lõõtsa 6 quickcharger",
     "city": "Tallinn",
     "address": "Lõõtsa 6",
@@ -1856,10 +2361,13 @@
     "lng": 24.8021223000001,
     "power_type": "DC",
     "power_kw": 50.0,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303157+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Nissan Fakto Auto",
     "city": "Tallinn",
     "address": "Osmussaare tee 10",
@@ -1867,10 +2375,13 @@
     "lng": 24.873632199999975,
     "power_type": "AC",
     "power_kw": 3.8,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303160+00:00"
   },
   {
     "operator": "Unknown",
+    "operator_key": "unknown",
     "station_name": "Freedom Square parking house",
     "city": "Tallinn",
     "address": "Vabaduse väljak 9",
@@ -1878,6 +2389,8 @@
     "lng": 24.74451320000003,
     "power_type": "AC",
     "power_kw": 3.8,
-    "price_eur_kwh": null
+    "price_eur_kwh": null,
+    "price_source": null,
+    "updated_at": "2026-03-09T12:15:47.303163+00:00"
   }
 ]
