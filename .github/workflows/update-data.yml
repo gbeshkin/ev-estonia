@@ -5,14 +5,21 @@ on:
     - cron: "0 6,18 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -24,7 +31,7 @@ jobs:
           OCM_API_KEY: ${{ secrets.OCM_API_KEY }}
         run: python scripts/fetch_ocm_estonia.py
 
-      - name: Commit updated data
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
