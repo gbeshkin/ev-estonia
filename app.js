@@ -1,4 +1,4 @@
-const DATA_URL = "./data/chargers.json";
+const DATA_URL = "./data/chargers-enefit.json";
 
 let allStations = [];
 let filteredStations = [];
