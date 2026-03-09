@@ -2,47 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EV Charging Estonia</title>
-  <meta name="description" content="Map and price overview of EV charging stations across Estonia." />
-
-  <link rel="preconnect" href="https://tile.openstreetmap.org" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enefit Volt Estonia</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="wrap topbar">
-    <div>
-      <h1>EV Charging Estonia</h1>
-      <p class="subtitle">Map, filters, nearby cheapest charger, and estimated cost per 100 km</p>
-    </div>
-    <div class="badges">
-      <span class="badge">Estonia</span>
-      <span class="badge">EV</span>
-      <span class="badge">Public charging</span>
+  <header class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Enefit Volt Estonia</h1>
+        <p class="subtitle">Live station prices from Enefit Volt station API</p>
+      </div>
+      <div class="badges">
+        <span class="badge">Estonia</span>
+        <span class="badge">Enefit Volt</span>
+        <span class="badge">EUR/kWh</span>
+      </div>
     </div>
   </header>
 
-  
-  
   <main class="wrap">
-    <section class="card filters-card">
-      <div class="filters-grid">
+    <section class="card filters">
+      <div class="filtersGrid">
         <label>
           <span>City</span>
           <input id="cityFilter" list="cityOptions" type="text" placeholder="e.g. Tallinn" />
           <datalist id="cityOptions"></datalist>
-        </label>
-
-        <label>
-          <span>Operator</span>
-          <select id="operatorFilter">
-            <option value="">All operators</option>
-          </select>
-        </label>
-        <label class="checkboxLabel">
-          <input id="onlyWithPrice" type="checkbox" />
-          <span>Only stations with price</span>
         </label>
 
         <label>
@@ -57,7 +43,7 @@
 
         <label>
           <span>Search</span>
-          <input id="searchFilter" type="text" placeholder="Station, address, city" />
+          <input id="searchFilter" type="text" placeholder="Station name or address" />
         </label>
 
         <label>
@@ -65,65 +51,74 @@
           <select id="sortBy">
             <option value="priceAsc">Price: lowest</option>
             <option value="priceDesc">Price: highest</option>
-            <option value="distanceAsc">Distance: nearest</option>
             <option value="cityAsc">City A-Z</option>
-            <option value="operatorAsc">Operator A-Z</option>
+            <option value="distanceAsc">Distance</option>
           </select>
         </label>
 
+        <label class="checkboxLabel">
+          <span>Only stations with price</span>
+          <input id="onlyWithPrice" type="checkbox" checked />
+        </label>
+
         <label>
-          <span>Price data</span>
-          <select id="pricedOnlyFilter">
-            <option value="">All stations</option>
-            <option value="priced">Only stations with price</option>
-          </select>
+          <span>Consumption (kWh/100 km)</span>
+          <input id="consumptionInput" type="number" min="1" step="1" value="20" />
         </label>
       </div>
 
-      <div class="filters-grid secondary-grid">
-        <label>
-          <span>Consumption (kWh / 100 km)</span>
-          <input id="consumptionInput" type="number" min="5" max="50" step="0.1" value="18" />
-        </label>
-
-        <label>
-          <span>Maximum distance (km)</span>
-          <input id="radiusInput" type="number" min="1" max="300" step="1" value="20" />
-        </label>
-
-        <div class="actions-row">
-          <button id="locateBtn" type="button">Find cheapest nearby</button>
-          <button id="resetBtn" class="ghost" type="button">Reset</button>
-        </div>
+      <div class="actionsRow">
+        <button id="resetBtn" type="button">Reset</button>
+        <button id="locateBtn" type="button">Find cheapest nearby</button>
       </div>
 
       <div class="stats" id="stats"></div>
-      <div class="nearbyResult hidden" id="nearbyResult"></div>
     </section>
 
-    <section class="card summary-cards" id="summaryCards"></section>
+    <section class="cardsRow">
+      <article class="card metric">
+        <div class="metricLabel">Average price</div>
+        <div class="metricValue" id="avgPriceCard">—</div>
+      </article>
+      <article class="card metric">
+        <div class="metricLabel">Cheapest price</div>
+        <div class="metricValue" id="cheapestPriceCard">—</div>
+      </article>
+      <article class="card metric">
+        <div class="metricLabel">Highest price</div>
+        <div class="metricValue" id="expensivePriceCard">—</div>
+      </article>
+      <article class="card metric">
+        <div class="metricLabel">Cost per 100 km</div>
+        <div class="metricValue" id="cost100kmCard">—</div>
+      </article>
+    </section>
 
-    <section class="card map-card">
+    <section class="card noticeCard">
+      <div id="cheapestNearby">Enable location to find the cheapest nearby charger.</div>
+    </section>
+
+    <section class="card mapCard">
       <div id="map"></div>
     </section>
 
-    <section class="card table-card">
-      <div class="table-head">
+    <section class="card tableCard">
+      <div class="tableHeader">
         <h2>Stations</h2>
         <div id="tableCount"></div>
       </div>
-      <div class="table-wrap">
+      <div class="tableWrap">
         <table>
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Operator</th>
               <th>Station</th>
               <th>City</th>
+              <th>Type</th>
               <th>Power</th>
               <th>Price</th>
               <th>Cost / 100 km</th>
               <th>Distance</th>
+              <th>Status</th>
               <th>Address</th>
             </tr>
           </thead>
@@ -134,10 +129,10 @@
   </main>
 
   <footer class="wrap footer">
-    <p>Locations are loaded from <code>data/chargers.json</code>. The included Python script can rebuild this file from Open Charge Map and apply public operator price rules.</p>
+    <p>Data source: Enefit Volt station endpoints.</p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="./app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
