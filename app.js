@@ -2,10 +2,9 @@ const DATA_URL = "./data/chargers.json";
 
 let allStations = [];
 let filteredStations = [];
-let markersLayer = null;
+let markersLayer;
 let userLocation = null;
 let userMarker = null;
-let nearbyHighlightId = null;
 
 const els = {
   cityFilter: document.getElementById("cityFilter"),
@@ -14,97 +13,53 @@ const els = {
   powerTypeFilter: document.getElementById("powerTypeFilter"),
   searchFilter: document.getElementById("searchFilter"),
   sortBy: document.getElementById("sortBy"),
-  pricedOnlyFilter: document.getElementById("pricedOnlyFilter"),
-  consumptionInput: document.getElementById("consumptionInput"),
-  radiusInput: document.getElementById("radiusInput"),
-  locateBtn: document.getElementById("locateBtn"),
+  onlyPricedFilter: document.getElementById("onlyPricedFilter"),
   resetBtn: document.getElementById("resetBtn"),
+  locateBtn: document.getElementById("locateBtn"),
+  consumptionInput: document.getElementById("consumptionInput"),
   stats: document.getElementById("stats"),
-  nearbyResult: document.getElementById("nearbyResult"),
-  summaryCards: document.getElementById("summaryCards"),
   tableBody: document.getElementById("tableBody"),
-  tableCount: document.getElementById("tableCount")
+  tableCount: document.getElementById("tableCount"),
+  metricStations: document.getElementById("metricStations"),
+  metricAvg: document.getElementById("metricAvg"),
+  metricMin: document.getElementById("metricMin"),
+  metricCost100: document.getElementById("metricCost100"),
+  cheapestNearby: document.getElementById("cheapestNearby"),
 };
 
-const map = L.map("map", { zoomControl: true }).setView([58.7, 25.0], 8);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "&copy; OpenStreetMap contributors",
-  maxZoom: 19
+const map = L.map("map", {
+  zoomControl: true,
+}).setView([58.7, 25.0], 8);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: '&copy; OpenStreetMap contributors',
+  maxZoom: 19,
 }).addTo(map);
+
 markersLayer = L.layerGroup().addTo(map);
-
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function formatPrice(price) {
-  return typeof price === "number" ? `${price.toFixed(3)} €/kWh` : "—";
-}
-
-function getConsumption() {
-  const value = Number(els.consumptionInput.value);
-  return Number.isFinite(value) && value > 0 ? value : 18;
-}
-
-function costPer100Km(item) {
-  if (typeof item.price_eur_kwh !== "number") return null;
-  return item.price_eur_kwh * getConsumption();
-}
-
-function formatCost100(item) {
-  const value = costPer100Km(item);
-  return typeof value === "number" ? `${value.toFixed(2)} €` : "—";
-}
-
-function haversineKm(lat1, lon1, lat2, lon2) {
-  const toRad = x => (x * Math.PI) / 180;
-  const R = 6371;
-  const dLat = toRad(lat2 - lat1);
-  const dLon = toRad(lon2 - lon1);
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(a));
-}
-
-function withDistance(item) {
-  if (!userLocation || typeof item.lat !== "number" || typeof item.lng !== "number") {
-    return { ...item, distance_km: null };
-  }
-  return {
-    ...item,
-    distance_km: haversineKm(userLocation.lat, userLocation.lng, item.lat, item.lng)
-  };
-}
 
 async function loadData() {
   const res = await fetch(DATA_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to load data: ${res.status}`);
+  if (!res.ok) {
+    throw new Error(`Failed to load data: ${res.status}`);
+  }
   const json = await res.json();
-  allStations = Array.isArray(json) ? json.map(normalizeStation) : [];
+  allStations = Array.isArray(json) ? json : [];
   initFilters(allStations);
   applyFilters();
 }
 
-function normalizeStation(raw, idx) {
-  const station = { ...raw };
-  station.id = raw.id || `${raw.operator || "operator"}-${raw.station_name || "station"}-${idx}`;
-  if (station.power_type) station.power_type = String(station.power_type).toUpperCase();
-  return station;
-}
-
 function initFilters(data) {
-  const cities = [...new Set(data.map(x => x.city).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-  const operators = [...new Set(data.map(x => x.operator).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  const cities = [...new Set(data.map((x) => x.city).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  const operators = [...new Set(data.map((x) => x.operator).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
-  els.cityOptions.innerHTML = cities.map(city => `<option value="${escapeHtml(city)}"></option>`).join("");
-  els.operatorFilter.innerHTML = '<option value="">All operators</option>' +
-    operators.map(op => `<option value="${escapeHtml(op)}">${escapeHtml(op)}</option>`).join("");
+  els.cityOptions.innerHTML = cities
+    .map((city) => `<option value="${escapeHtml(city)}"></option>`)
+    .join("");
+
+  els.operatorFilter.innerHTML =
+    `<option value="">All operators</option>` +
+    operators.map((op) => `<option value="${escapeHtml(op)}">${escapeHtml(op)}</option>`).join("");
 }
 
 function applyFilters() {
@@ -112,34 +67,39 @@ function applyFilters() {
   const operator = els.operatorFilter.value.trim().toLowerCase();
   const powerType = els.powerTypeFilter.value.trim().toLowerCase();
   const search = els.searchFilter.value.trim().toLowerCase();
-  const pricedOnly = els.pricedOnlyFilter.value === "priced";
   const sortBy = els.sortBy.value;
+  const onlyPriced = els.onlyPricedFilter.checked;
 
-  filteredStations = allStations
-    .map(withDistance)
-    .filter(item => {
-      const haystack = [item.station_name, item.address, item.city, item.operator].join(" ").toLowerCase();
-      const matchesCity = !city || (item.city || "").toLowerCase().includes(city);
-      const matchesOperator = !operator || (item.operator || "").toLowerCase() === operator;
-      const matchesType = !powerType || (item.power_type || "").toLowerCase() === powerType;
-      const matchesSearch = !search || haystack.includes(search);
-      const matchesPrice = !pricedOnly || typeof item.price_eur_kwh === "number";
-      return matchesCity && matchesOperator && matchesType && matchesSearch && matchesPrice;
-    })
-    .sort((a, b) => sortStations(a, b, sortBy));
+  filteredStations = allStations.filter((item) => {
+    const matchesCity = !city || (item.city || "").toLowerCase().includes(city);
+    const matchesOperator = !operator || (item.operator || "").toLowerCase() === operator;
+    const matchesPowerType = !powerType || (item.power_type || "").toLowerCase() === powerType;
+    const haystack = [item.station_name, item.address, item.city, item.operator].join(" ").toLowerCase();
+    const matchesSearch = !search || haystack.includes(search);
+    const matchesPrice = !onlyPriced || typeof item.price_eur_kwh === "number";
 
-  renderSummary(filteredStations);
-  renderStats(filteredStations);
+    return matchesCity && matchesOperator && matchesPowerType && matchesSearch && matchesPrice;
+  });
+
+  filteredStations.sort((a, b) => sortStations(a, b, sortBy));
+
   renderMap(filteredStations);
   renderTable(filteredStations);
+  renderStats(filteredStations);
+  updateCheapestNearbyCard();
 }
 
 function sortStations(a, b, mode) {
   if (mode === "priceAsc") return safePrice(a) - safePrice(b);
   if (mode === "priceDesc") return safePrice(b) - safePrice(a);
-  if (mode === "distanceAsc") return safeDistance(a) - safeDistance(b);
   if (mode === "cityAsc") return (a.city || "").localeCompare(b.city || "");
   if (mode === "operatorAsc") return (a.operator || "").localeCompare(b.operator || "");
+  if (mode === "distanceAsc") {
+    if (!userLocation) return 0;
+    const da = getDistanceForStation(a);
+    const db = getDistanceForStation(b);
+    return da - db;
+  }
   return 0;
 }
 
@@ -147,129 +107,194 @@ function safePrice(item) {
   return typeof item.price_eur_kwh === "number" ? item.price_eur_kwh : Number.MAX_SAFE_INTEGER;
 }
 
-function safeDistance(item) {
-  return typeof item.distance_km === "number" ? item.distance_km : Number.MAX_SAFE_INTEGER;
-}
-
-function renderSummary(data) {
-  const priced = data.filter(x => typeof x.price_eur_kwh === "number");
-  const cheapest = priced.length ? priced.reduce((a, b) => a.price_eur_kwh <= b.price_eur_kwh ? a : b) : null;
-  const avgPrice = priced.length ? priced.reduce((sum, x) => sum + x.price_eur_kwh, 0) / priced.length : null;
-  const avgCost = priced.length ? priced.reduce((sum, x) => sum + costPer100Km(x), 0) / priced.length : null;
-  const hpcCount = data.filter(x => x.power_type === "HPC").length;
-
-  els.summaryCards.innerHTML = [
-    summaryCard("Visible stations", String(data.length), `${priced.length} with price`),
-    summaryCard("Average price", avgPrice != null ? `${avgPrice.toFixed(3)} €/kWh` : "—", `Based on visible priced stations`),
-    summaryCard("Avg. cost / 100 km", avgCost != null ? `${avgCost.toFixed(2)} €` : "—", `${getConsumption().toFixed(1)} kWh / 100 km`),
-    summaryCard("HPC visible", String(hpcCount), cheapest ? `Cheapest: ${escapeHtml(cheapest.operator)} ${escapeHtml(cheapest.city || "")}` : "No price data")
-  ].join("");
-}
-
-function summaryCard(label, value, sub) {
-  return `
-    <div class="summary-card">
-      <div class="label">${escapeHtml(label)}</div>
-      <div class="value">${escapeHtml(value)}</div>
-      <div class="sub">${escapeHtml(sub)}</div>
-    </div>
-  `;
-}
-
-function renderStats(data) {
-  const priced = data.filter(x => typeof x.price_eur_kwh === "number");
-  const min = priced.length ? Math.min(...priced.map(x => x.price_eur_kwh)) : null;
-  const max = priced.length ? Math.max(...priced.map(x => x.price_eur_kwh)) : null;
-  const avg = priced.length ? priced.reduce((sum, x) => sum + x.price_eur_kwh, 0) / priced.length : null;
-
-  const parts = [
-    `Stations: ${data.length}`,
-    `With price: ${priced.length}`,
-    `Average: ${avg != null ? avg.toFixed(3) + ' €/kWh' : '—'}`,
-    `Min: ${min != null ? min.toFixed(3) + ' €/kWh' : '—'}`,
-    `Max: ${max != null ? max.toFixed(3) + ' €/kWh' : '—'}`
-  ];
-
-  if (userLocation) parts.push(`Location enabled`);
-  els.stats.textContent = parts.join(" · ");
-}
-
 function renderMap(data) {
   markersLayer.clearLayers();
+
+  if (!data.length) return;
+
   const bounds = [];
 
-  if (userMarker) {
-    markersLayer.addLayer(userMarker);
-    bounds.push([userLocation.lat, userLocation.lng]);
-  }
-
-  data.forEach(item => {
+  data.forEach((item) => {
     if (typeof item.lat !== "number" || typeof item.lng !== "number") return;
 
     const marker = L.marker([item.lat, item.lng]);
-    const icon = getTypeIcon(item.power_type);
+    const distanceText = userLocation ? `${getDistanceForStation(item).toFixed(1)} km` : "—";
     marker.bindPopup(`
-      <div class="popup-title">${icon} ${escapeHtml(item.station_name || 'Unnamed station')}</div>
-      <div class="popup-line"><strong>Operator:</strong> ${escapeHtml(item.operator || '—')}</div>
-      <div class="popup-line"><strong>City:</strong> ${escapeHtml(item.city || '—')}</div>
-      <div class="popup-line"><strong>Power:</strong> ${escapeHtml(item.power_kw ? item.power_kw + ' kW' : '—')}</div>
-      <div class="popup-line"><strong>Price:</strong> ${formatPrice(item.price_eur_kwh)}</div>
-      <div class="popup-line"><strong>Cost / 100 km:</strong> ${formatCost100(item)}</div>
-      <div class="popup-line"><strong>Address:</strong> ${escapeHtml(item.address || '—')}</div>
-      <div class="popup-line"><strong>Source:</strong> ${escapeHtml(item.data_source || '—')}</div>
+      <div class="popupTitle">${escapeHtml(item.station_name || "Unnamed station")}</div>
+      <div class="popupMeta"><strong>Operator:</strong> ${escapeHtml(item.operator || "—")}</div>
+      <div class="popupMeta"><strong>City:</strong> ${escapeHtml(item.city || "—")}</div>
+      <div class="popupMeta"><strong>Type:</strong> ${escapeHtml(item.power_type || "—")}</div>
+      <div class="popupMeta"><strong>Power:</strong> ${escapeHtml(item.power_kw ? `${item.power_kw} kW` : "—")}</div>
+      <div class="popupMeta"><strong>Price:</strong> ${formatPrice(item.price_eur_kwh)}</div>
+      <div class="popupMeta"><strong>Cost / 100 km:</strong> ${formatCost100(item.price_eur_kwh)}</div>
+      <div class="popupMeta"><strong>Distance:</strong> ${distanceText}</div>
+      <div class="popupMeta"><strong>Source:</strong> ${formatPriceSource(item.price_source)}</div>
+      <div class="popupMeta"><strong>Address:</strong> ${escapeHtml(item.address || "—")}</div>
     `);
-
-    if (nearbyHighlightId && item.id === nearbyHighlightId) {
-      marker.openPopup();
-    }
 
     marker.addTo(markersLayer);
     bounds.push([item.lat, item.lng]);
   });
 
-  if (bounds.length) {
-    map.fitBounds(bounds, { padding: [30, 30], maxZoom: 13 });
-  }
-}
-
-function getTypeIcon(type) {
-  if (type === "AC") return "⚡";
-  if (type === "DC") return "⚡⚡";
-  if (type === "HPC") return "⚡⚡⚡";
-  return "⚡";
+  if (userMarker) bounds.push(userMarker.getLatLng());
+  if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
 }
 
 function renderTable(data) {
-  els.tableBody.innerHTML = data.map(item => `
+  els.tableBody.innerHTML = data.map((item) => `
     <tr>
-      <td>${renderTypePill(item)}</td>
-      <td>${escapeHtml(item.operator || '—')}</td>
-      <td>${escapeHtml(item.station_name || '—')}</td>
-      <td>${escapeHtml(item.city || '—')}</td>
-      <td>${escapeHtml(item.power_kw ? item.power_kw + ' kW' : '—')}</td>
+      <td>${escapeHtml(item.operator || "—")}</td>
+      <td>${escapeHtml(item.station_name || "—")}</td>
+      <td>${escapeHtml(item.city || "—")}</td>
+      <td>${renderPowerType(item.power_type)}</td>
+      <td>${escapeHtml(item.power_kw ? `${item.power_kw} kW` : "—")}</td>
       <td>${formatPrice(item.price_eur_kwh)}</td>
-      <td>${formatCost100(item)}</td>
-      <td>${item.distance_km != null ? item.distance_km.toFixed(1) + ' km' : '<span class="dim">—</span>'}</td>
-      <td>${escapeHtml(item.address || '—')}</td>
+      <td>${escapeHtml(formatPriceSource(item.price_source))}</td>
+      <td>${formatCost100(item.price_eur_kwh)}</td>
+      <td>${escapeHtml(item.address || "—")}</td>
     </tr>
   `).join("");
 
   els.tableCount.textContent = `Found: ${data.length}`;
 }
 
-function renderTypePill(item) {
-  const type = escapeHtml(item.power_type || '—');
-  return `<span class="type-pill">${getTypeIcon(item.power_type)} <span>${type}</span> <small>${escapeHtml(item.connectors || '')}</small></span>`;
+function renderStats(data) {
+  const withPrice = data.filter((x) => typeof x.price_eur_kwh === "number");
+  const avg = withPrice.length
+    ? withPrice.reduce((sum, x) => sum + x.price_eur_kwh, 0) / withPrice.length
+    : null;
+  const min = withPrice.length ? Math.min(...withPrice.map((x) => x.price_eur_kwh)) : null;
+  const consumption = getConsumption();
+  const cost100 = avg !== null ? avg * consumption : null;
+
+  els.stats.textContent = `Stations: ${data.length} · With price: ${withPrice.length} · Consumption: ${consumption.toFixed(1)} kWh/100 km`;
+  els.metricStations.textContent = String(data.length);
+  els.metricAvg.textContent = avg !== null ? `${avg.toFixed(3)} €/kWh` : "—";
+  els.metricMin.textContent = min !== null ? `${min.toFixed(3)} €/kWh` : "—";
+  els.metricCost100.textContent = cost100 !== null ? `${cost100.toFixed(2)} €` : "—";
+}
+
+function getConsumption() {
+  const value = Number(els.consumptionInput.value);
+  return Number.isFinite(value) && value > 0 ? value : 20;
+}
+
+function formatPrice(value) {
+  return typeof value === "number" ? `${value.toFixed(3)} €/kWh` : "—";
+}
+
+function formatCost100(price) {
+  return typeof price === "number" ? `${(price * getConsumption()).toFixed(2)} €` : "—";
+}
+
+function formatPriceSource(value) {
+  if (!value) return "—";
+  return value
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+function renderPowerType(value) {
+  const type = value || "—";
+  const icon = type === "AC" ? "⚡" : type === "DC" ? "⚡⚡" : type === "HPC" ? "⚡⚡⚡" : "⚡";
+  return `<span class="powerBadge">${icon} ${escapeHtml(type)}</span>`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function haversineKm(lat1, lon1, lat2, lon2) {
+  const toRad = (v) => (v * Math.PI) / 180;
+  const R = 6371;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+}
+
+function getDistanceForStation(station) {
+  if (!userLocation || typeof station.lat !== "number" || typeof station.lng !== "number") {
+    return Number.MAX_SAFE_INTEGER;
+  }
+  return haversineKm(userLocation.lat, userLocation.lng, station.lat, station.lng);
+}
+
+function findCheapestNearby(maxDistanceKm = 25) {
+  if (!userLocation) return null;
+
+  const candidates = filteredStations
+    .filter((s) => typeof s.lat === "number" && typeof s.lng === "number" && typeof s.price_eur_kwh === "number")
+    .map((s) => ({ ...s, distance_km: getDistanceForStation(s) }))
+    .filter((s) => s.distance_km <= maxDistanceKm)
+    .sort((a, b) => {
+      if (a.price_eur_kwh !== b.price_eur_kwh) return a.price_eur_kwh - b.price_eur_kwh;
+      return a.distance_km - b.distance_km;
+    });
+
+  return candidates[0] || null;
+}
+
+function updateCheapestNearbyCard() {
+  if (!userLocation) {
+    els.cheapestNearby.textContent = 'Click “Find cheapest nearby” to use your location.';
+    return;
+  }
+
+  const best = findCheapestNearby(25);
+  if (!best) {
+    els.cheapestNearby.textContent = "No priced charger found within 25 km for the current filters.";
+    return;
+  }
+
+  els.cheapestNearby.innerHTML =
+    `Cheapest nearby: <strong>${escapeHtml(best.station_name)}</strong> (${escapeHtml(best.operator)}) · ` +
+    `${best.price_eur_kwh.toFixed(3)} €/kWh · ${best.distance_km.toFixed(1)} km · ` +
+    `${formatCost100(best.price_eur_kwh)} per 100 km`;
+}
+
+function locateAndShowCheapestNearby() {
+  if (!navigator.geolocation) {
+    els.cheapestNearby.textContent = "Geolocation is not supported by your browser.";
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      userLocation = {
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude,
+      };
+
+      if (userMarker) {
+        map.removeLayer(userMarker);
+      }
+
+      userMarker = L.marker([userLocation.lat, userLocation.lng])
+        .addTo(map)
+        .bindPopup("Your location");
+
+      applyFilters();
+    },
+    () => {
+      els.cheapestNearby.textContent = "Location access denied.";
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
 }
 
 function attachEvents() {
-  [els.cityFilter, els.searchFilter, els.consumptionInput, els.radiusInput].forEach(el => {
-    el.addEventListener("input", applyFilters);
-  });
-
-  [els.operatorFilter, els.powerTypeFilter, els.sortBy, els.pricedOnlyFilter].forEach(el => {
-    el.addEventListener("change", applyFilters);
-  });
+  [els.cityFilter, els.searchFilter, els.consumptionInput].forEach((el) => el.addEventListener("input", applyFilters));
+  [els.operatorFilter, els.powerTypeFilter, els.sortBy, els.onlyPricedFilter].forEach((el) => el.addEventListener("change", applyFilters));
 
   els.resetBtn.addEventListener("click", () => {
     els.cityFilter.value = "";
@@ -277,84 +302,16 @@ function attachEvents() {
     els.powerTypeFilter.value = "";
     els.searchFilter.value = "";
     els.sortBy.value = "priceAsc";
-    els.pricedOnlyFilter.value = "";
-    els.consumptionInput.value = "18";
-    els.radiusInput.value = "20";
-    nearbyHighlightId = null;
-    hideNearby();
+    els.onlyPricedFilter.checked = false;
+    els.consumptionInput.value = "20";
     applyFilters();
   });
 
-  els.locateBtn.addEventListener("click", findCheapestNearby);
-}
-
-function hideNearby() {
-  els.nearbyResult.classList.add("hidden");
-  els.nearbyResult.innerHTML = "";
-}
-
-function showNearby(html) {
-  els.nearbyResult.classList.remove("hidden");
-  els.nearbyResult.innerHTML = html;
-}
-
-function ensureUserMarker() {
-  if (!userLocation) return;
-  if (userMarker) markersLayer.removeLayer(userMarker);
-  userMarker = L.circleMarker([userLocation.lat, userLocation.lng], {
-    radius: 9,
-    weight: 2,
-    fillOpacity: 0.95
-  }).bindPopup("You are here");
-}
-
-function findCheapestNearby() {
-  if (!navigator.geolocation) {
-    showNearby('<span class="warn">Geolocation is not supported in this browser.</span>');
-    return;
-  }
-
-  navigator.geolocation.getCurrentPosition(
-    position => {
-      userLocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      ensureUserMarker();
-      applyFilters();
-
-      const radiusKm = Number(els.radiusInput.value) || 20;
-      const nearby = filteredStations
-        .filter(x => typeof x.price_eur_kwh === "number" && typeof x.distance_km === "number" && x.distance_km <= radiusKm)
-        .sort((a, b) => a.price_eur_kwh - b.price_eur_kwh || a.distance_km - b.distance_km);
-
-      if (!nearby.length) {
-        nearbyHighlightId = null;
-        showNearby(`No priced chargers found within ${radiusKm} km.`);
-        return;
-      }
-
-      const best = nearby[0];
-      nearbyHighlightId = best.id;
-      applyFilters();
-
-      showNearby(`
-        <strong>Cheapest nearby charger:</strong> ${escapeHtml(best.station_name)} (${escapeHtml(best.operator)})<br />
-        <strong>Type:</strong> ${getTypeIcon(best.power_type)} ${escapeHtml(best.power_type)} · ${escapeHtml(best.power_kw ? best.power_kw + ' kW' : '—')}<br />
-        <strong>Price:</strong> ${formatPrice(best.price_eur_kwh)} · <strong>Cost / 100 km:</strong> ${formatCost100(best)}<br />
-        <strong>Distance:</strong> ${best.distance_km.toFixed(1)} km · <strong>City:</strong> ${escapeHtml(best.city || '—')}<br />
-        <strong>Address:</strong> ${escapeHtml(best.address || '—')}
-      `);
-    },
-    () => {
-      showNearby('<span class="warn">Location permission was denied or unavailable.</span>');
-    },
-    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-  );
+  els.locateBtn.addEventListener("click", locateAndShowCheapestNearby);
 }
 
 attachEvents();
-loadData().catch(error => {
-  console.error(error);
-  els.stats.textContent = "Could not load station data.";
+loadData().catch((err) => {
+  console.error(err);
+  els.stats.textContent = "Failed to load data.";
 });
