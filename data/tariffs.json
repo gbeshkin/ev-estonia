@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-03-09",
+  "currency": "EUR",
+  "tariffs": {
+    "enefit": {
+      "label": "Enefit Volt",
+      "official": true,
+      "rules": [
+        {
+          "power_max_kw": 100,
+          "registered_day": 0.37,
+          "registered_night": 0.33,
+          "guest": 0.42
+        },
+        {
+          "power_min_kw": 100.0001,
+          "registered_day": 0.50,
+          "registered_night": 0.46,
+          "guest": 0.54
+        }
+      ]
+    },
+    "eleport": {
+      "label": "Eleport",
+      "official": true,
+      "rules": [
+        {
+          "power_max_kw": 22,
+          "default": 0.29
+        },
+        {
+          "power_min_kw": 22.0001,
+          "power_max_kw": 50,
+          "default": 0.32
+        },
+        {
+          "power_min_kw": 50.0001,
+          "default": 0.42
+        }
+      ],
+      "station_overrides": [
+        {
+          "match": "rocca al mare",
+          "price": 0.46
+        },
+        {
+          "match": "sikupilli",
+          "price": 0.46
+        },
+        {
+          "match": "kristiine",
+          "price": 0.46
+        },
+        {
+          "match": "lõunakeskus",
+          "price": 0.46
+        }
+      ]
+    },
+    "alexela": {
+      "label": "Alexela",
+      "official": true,
+      "dynamic_pricing_note": true,
+      "rules": [
+        {
+          "power_max_kw": 22,
+          "default": 0.32
+        },
+        {
+          "power_min_kw": 22.0001,
+          "power_max_kw": 50,
+          "default": 0.39
+        },
+        {
+          "power_min_kw": 50.0001,
+          "default": 0.49
+        }
+      ]
+    }
+  }
+}
