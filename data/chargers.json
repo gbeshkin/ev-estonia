@@ -1,25 +1,61 @@
 [
   {
-    "station_id": 53811,
-    "site_id": 53811,
+    "station_id": 721,
+    "site_id": 616,
     "operator": "Enefit Volt",
-    "station_name": "Sample Enefit Volt station",
-    "city": "Tallinn",
-    "address": "Sample address, Tallinn",
-    "lat": 59.4219,
-    "lng": 24.7996,
-    "speed": "FAST",
-    "power_type": "DC",
-    "power_kw": 120,
+    "station_name": "Tabivere PK",
+    "city": "Tabivere",
+    "address": "Hariduse 1, Tabivere, 46127, Tabivere",
+    "lat": 58.5481843,
+    "lng": 26.6070967,
+    "speed": "SEMI_FAST",
+    "power_type": "AC",
+    "power_kw": 22.0,
     "price_eur_kwh": 0.42,
     "price_source": "live_station_api",
     "status_id": "AVAILABLE",
     "sockets": [
       {
-        "name": "CCS 1",
-        "maximum_power": 120,
+        "name": "Type2 (A)",
+        "maximum_power": 22.0,
         "status_id": "AVAILABLE",
         "price_eur_kwh": 0.42
+      },
+      {
+        "name": "Type2 (B)",
+        "maximum_power": 22.0,
+        "status_id": "AVAILABLE",
+        "price_eur_kwh": 0.42
+      }
+    ]
+  },
+  {
+    "station_id": 607,
+    "site_id": 559,
+    "operator": "Enefit Volt",
+    "station_name": "Tallinn Laagri Circle K",
+    "city": "Tallinn",
+    "address": "Pärnu mnt 552b, Tallinn",
+    "lat": 59.3540332,
+    "lng": 24.6288982,
+    "speed": "ULTRA_FAST",
+    "power_type": "HPC",
+    "power_kw": 161.0,
+    "price_eur_kwh": null,
+    "price_source": "live_station_api",
+    "status_id": "UNKNOWN",
+    "sockets": [
+      {
+        "name": "CHAdeMO",
+        "maximum_power": 50.0,
+        "status_id": "UNKNOWN",
+        "price_eur_kwh": null
+      },
+      {
+        "name": "CCS",
+        "maximum_power": 161.0,
+        "status_id": "UNKNOWN",
+        "price_eur_kwh": null
       }
     ]
   }
