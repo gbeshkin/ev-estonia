@@ -9,21 +9,40 @@
 </head>
 <body>
   <header class="wrap">
-    <div class="hero">
+    <div class="headerRow">
       <div>
         <h1>Enefit Volt Estonia</h1>
-        <p class="subtitle">Live station prices from Enefit Volt station API</p>
+        <p class="subtitle">Live station prices from Enefit Volt API</p>
       </div>
       <div class="badges">
         <span class="badge">Estonia</span>
         <span class="badge">Enefit Volt</span>
-        <span class="badge">EUR/kWh</span>
+        <span class="badge">€/kWh</span>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="card filters">
+    <section class="summaryGrid">
+      <div class="metricCard">
+        <div class="metricLabel">Average price</div>
+        <div class="metricValue" id="avgPriceCard">—</div>
+      </div>
+      <div class="metricCard">
+        <div class="metricLabel">Cheapest</div>
+        <div class="metricValue" id="cheapestPriceCard">—</div>
+      </div>
+      <div class="metricCard">
+        <div class="metricLabel">Most expensive</div>
+        <div class="metricValue" id="expensivePriceCard">—</div>
+      </div>
+      <div class="metricCard">
+        <div class="metricLabel">Cost per 100 km</div>
+        <div class="metricValue" id="cost100kmCard">—</div>
+      </div>
+    </section>
+
+    <section class="filters card">
       <div class="filtersGrid">
         <label>
           <span>City</span>
@@ -57,52 +76,33 @@
         </label>
 
         <label class="checkboxLabel">
+          <input id="onlyWithPrice" type="checkbox" />
           <span>Only stations with price</span>
-          <input id="onlyWithPrice" type="checkbox" checked />
         </label>
 
         <label>
           <span>Consumption (kWh/100 km)</span>
-          <input id="consumptionInput" type="number" min="1" step="1" value="20" />
+          <input id="consumptionInput" type="number" value="20" min="1" step="1" />
         </label>
       </div>
 
       <div class="actionsRow">
         <button id="resetBtn" type="button">Reset</button>
-        <button id="locateBtn" type="button">Find cheapest nearby</button>
+        <button id="locateBtn" type="button" class="secondary">Use my location</button>
       </div>
 
       <div class="stats" id="stats"></div>
     </section>
 
-    <section class="cardsRow">
-      <article class="card metric">
-        <div class="metricLabel">Average price</div>
-        <div class="metricValue" id="avgPriceCard">—</div>
-      </article>
-      <article class="card metric">
-        <div class="metricLabel">Cheapest price</div>
-        <div class="metricValue" id="cheapestPriceCard">—</div>
-      </article>
-      <article class="card metric">
-        <div class="metricLabel">Highest price</div>
-        <div class="metricValue" id="expensivePriceCard">—</div>
-      </article>
-      <article class="card metric">
-        <div class="metricLabel">Cost per 100 km</div>
-        <div class="metricValue" id="cost100kmCard">—</div>
-      </article>
-    </section>
-
-    <section class="card noticeCard">
+    <section class="card nearestCard">
       <div id="cheapestNearby">Enable location to find the cheapest nearby charger.</div>
     </section>
 
-    <section class="card mapCard">
+    <section class="mapCard card">
       <div id="map"></div>
     </section>
 
-    <section class="card tableCard">
+    <section class="tableCard card">
       <div class="tableHeader">
         <h2>Stations</h2>
         <div id="tableCount"></div>
@@ -116,9 +116,8 @@
               <th>Type</th>
               <th>Power</th>
               <th>Price</th>
-              <th>Cost / 100 km</th>
+              <th>100 km cost</th>
               <th>Distance</th>
-              <th>Status</th>
               <th>Address</th>
             </tr>
           </thead>
@@ -129,10 +128,10 @@
   </main>
 
   <footer class="wrap footer">
-    <p>Data source: Enefit Volt station endpoints.</p>
+    <p>Data source: Enefit Volt station API. Live session-based fetch via GitHub Actions.</p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="app.js"></script>
 </body>
 </html>
