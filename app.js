@@ -43,21 +43,22 @@ async function loadData() {
 }
 
 function sanitizeStations(items) {
-  return items.map((item) => ({
-    station_id: item.station_id ?? null,
-    site_id: item.site_id ?? null,
-    station_name: item.station_name || "Unnamed station",
-    city: item.city || "",
-    address: item.address || "",
-    lat: toNumberOrNull(item.lat),
-    lng: toNumberOrNull(item.lng),
-    power_type: item.power_type || inferPowerType(item.power_kw),
-    power_kw: toNumberOrNull(item.power_kw),
-    price_eur_kwh: toNumberOrNull(item.price_eur_kwh),
-    status: item.status || "UNKNOWN",
-    price_source: item.price_source || "live_station_price",
-    sockets: Array.isArray(item.sockets) ? item.sockets : [],
-  })).filter((item) => item.lat !== null && item.lng !== null);
+  return items
+    .map((item) => ({
+      station_id: item.station_id ?? item.id ?? null,
+      operator: item.operator || "Enefit Volt",
+      station_name: item.station_name || item.name || "Unnamed station",
+      city: item.city || "",
+      address: item.address || "",
+      lat: toNumberOrNull(item.lat),
+      lng: toNumberOrNull(item.lng),
+      power_type: item.power_type || inferPowerType(item.power_kw || item.speed),
+      power_kw: toNumberOrNull(item.power_kw),
+      price_eur_kwh: toNumberOrNull(item.price_eur_kwh),
+      price_source: item.price_source || "live_station_api",
+      speed: item.speed || "",
+    }))
+    .filter((item) => item.lat !== null && item.lng !== null);
 }
 
 function toNumberOrNull(value) {
@@ -69,11 +70,16 @@ function toNumberOrNull(value) {
   return null;
 }
 
-function inferPowerType(powerKw) {
-  const kw = toNumberOrNull(powerKw);
-  if (kw === null) return "AC";
-  if (kw > 50) return "HPC";
-  if (kw >= 25) return "DC";
+function inferPowerType(value) {
+  const text = String(value || "").toUpperCase();
+  const kw = toNumberOrNull(value);
+  if (kw !== null) {
+    if (kw > 50) return "HPC";
+    if (kw >= 25) return "DC";
+    return "AC";
+  }
+  if (text.includes("ULTRA")) return "HPC";
+  if (text.includes("FAST")) return "DC";
   return "AC";
 }
 
@@ -113,14 +119,13 @@ function sortStations(a, b, mode) {
   if (mode === "priceDesc") return compareNullableNumbers(a.price_eur_kwh, b.price_eur_kwh, "desc");
   if (mode === "cityAsc") return (a.city || "").localeCompare(b.city || "");
   if (mode === "distanceAsc") {
-    const aDist = distanceFromUser(a);
-    const bDist = distanceFromUser(b);
-    return compareNullableNumbers(aDist, bDist, "asc");
+    if (!userLocation) return 0;
+    return compareNullableNumbers(distanceFromUser(a), distanceFromUser(b), "asc");
   }
   return 0;
 }
 
-function compareNullableNumbers(a, b, direction) {
+function compareNullableNumbers(a, b, direction = "asc") {
   const aValid = typeof a === "number" && Number.isFinite(a);
   const bValid = typeof b === "number" && Number.isFinite(b);
   if (!aValid && !bValid) return 0;
@@ -135,15 +140,16 @@ function renderMap(data) {
 
   data.forEach((item) => {
     const marker = L.marker([item.lat, item.lng]);
+    const cost100km = calculateCostPer100Km(item.price_eur_kwh);
     const distance = distanceFromUser(item);
     marker.bindPopup(`
       <div class="popupTitle">${escapeHtml(item.station_name)}</div>
+      <div class="popupMeta"><strong>Operator:</strong> ${escapeHtml(item.operator)}</div>
       <div class="popupMeta"><strong>City:</strong> ${escapeHtml(item.city || "—")}</div>
       <div class="popupMeta"><strong>Type:</strong> ${powerIcon(item.power_type)} ${escapeHtml(item.power_type || "—")}</div>
-      <div class="popupMeta"><strong>Power:</strong> ${item.power_kw ? `${item.power_kw} kW` : "—"}</div>
+      <div class="popupMeta"><strong>Power:</strong> ${item.power_kw ? `${item.power_kw} kW` : escapeHtml(item.speed || "—")}</div>
       <div class="popupMeta"><strong>Price:</strong> ${formatPrice(item.price_eur_kwh)}</div>
-      <div class="popupMeta"><strong>Cost per 100 km:</strong> ${calculateCostPer100Km(item.price_eur_kwh)}</div>
-      <div class="popupMeta"><strong>Status:</strong> ${escapeHtml(item.status || "—")}</div>
+      <div class="popupMeta"><strong>Cost per 100 km:</strong> ${cost100km}</div>
       <div class="popupMeta"><strong>Address:</strong> ${escapeHtml(item.address || "—")}</div>
       <div class="popupMeta"><strong>Price source:</strong> ${escapeHtml(item.price_source || "—")}</div>
       ${distance !== null ? `<div class="popupMeta"><strong>Distance:</strong> ${distance.toFixed(1)} km</div>` : ""}
@@ -165,11 +171,10 @@ function renderTable(data) {
         <td>${escapeHtml(item.station_name)}</td>
         <td>${escapeHtml(item.city || "—")}</td>
         <td>${powerIcon(item.power_type)} ${escapeHtml(item.power_type || "—")}</td>
-        <td>${item.power_kw ? `${item.power_kw} kW` : "—"}</td>
+        <td>${item.power_kw ? `${item.power_kw} kW` : escapeHtml(item.speed || "—")}</td>
         <td>${formatPrice(item.price_eur_kwh)}</td>
         <td>${calculateCostPer100Km(item.price_eur_kwh)}</td>
         <td>${distance !== null ? `${distance.toFixed(1)} km` : "—"}</td>
-        <td>${escapeHtml(item.status || "—")}</td>
         <td>${escapeHtml(item.address || "—")}</td>
       </tr>`;
   }).join("");
@@ -178,34 +183,28 @@ function renderTable(data) {
 
 function renderStats(data) {
   if (!els.stats) return;
-  const priced = data.filter((x) => typeof x.price_eur_kwh === "number");
-  const avg = priced.length ? (priced.reduce((sum, x) => sum + x.price_eur_kwh, 0) / priced.length).toFixed(3) : "—";
-  const min = priced.length ? Math.min(...priced.map((x) => x.price_eur_kwh)).toFixed(3) : "—";
-  const max = priced.length ? Math.max(...priced.map((x) => x.price_eur_kwh)).toFixed(3) : "—";
-  els.stats.textContent = `Stations: ${data.length} · With price: ${priced.length} · Average price: ${avg} €/kWh · Min: ${min} €/kWh · Max: ${max} €/kWh`;
+  const withPrice = data.filter((x) => typeof x.price_eur_kwh === "number");
+  const avg = withPrice.length ? (withPrice.reduce((sum, x) => sum + x.price_eur_kwh, 0) / withPrice.length).toFixed(3) : "—";
+  const min = withPrice.length ? Math.min(...withPrice.map((x) => x.price_eur_kwh)).toFixed(3) : "—";
+  const max = withPrice.length ? Math.max(...withPrice.map((x) => x.price_eur_kwh)).toFixed(3) : "—";
+  els.stats.textContent = `Stations: ${data.length} · With price: ${withPrice.length} · Average: ${avg} €/kWh · Min: ${min} €/kWh · Max: ${max} €/kWh`;
 }
 
 function renderSummaryCards(data) {
   const priced = data.filter((x) => typeof x.price_eur_kwh === "number");
-  if (els.avgPriceCard) els.avgPriceCard.textContent = priced.length ? `${(priced.reduce((s, x) => s + x.price_eur_kwh, 0) / priced.length).toFixed(3)} €/kWh` : "—";
-  if (els.cheapestPriceCard) els.cheapestPriceCard.textContent = priced.length ? `${Math.min(...priced.map((x) => x.price_eur_kwh)).toFixed(3)} €/kWh` : "—";
-  if (els.expensivePriceCard) els.expensivePriceCard.textContent = priced.length ? `${Math.max(...priced.map((x) => x.price_eur_kwh)).toFixed(3)} €/kWh` : "—";
+  const avg = priced.length ? `${(priced.reduce((sum, x) => sum + x.price_eur_kwh, 0) / priced.length).toFixed(3)} €/kWh` : "—";
+  const cheapest = priced.length ? `${Math.min(...priced.map((x) => x.price_eur_kwh)).toFixed(3)} €/kWh` : "—";
+  const expensive = priced.length ? `${Math.max(...priced.map((x) => x.price_eur_kwh)).toFixed(3)} €/kWh` : "—";
   const cheapestStation = priced.length ? priced.reduce((best, current) => current.price_eur_kwh < best.price_eur_kwh ? current : best) : null;
-  if (els.cost100kmCard) els.cost100kmCard.textContent = cheapestStation ? calculateCostPer100Km(cheapestStation.price_eur_kwh) : "—";
+  const cost100km = cheapestStation ? calculateCostPer100Km(cheapestStation.price_eur_kwh) : "—";
+  if (els.avgPriceCard) els.avgPriceCard.textContent = avg;
+  if (els.cheapestPriceCard) els.cheapestPriceCard.textContent = cheapest;
+  if (els.expensivePriceCard) els.expensivePriceCard.textContent = expensive;
+  if (els.cost100kmCard) els.cost100kmCard.textContent = cost100km;
 }
 
 function formatPrice(value) {
   return typeof value === "number" ? `${value.toFixed(3)} €/kWh` : "—";
-}
-
-function getConsumptionValue() {
-  const num = Number(els.consumptionInput?.value);
-  return Number.isFinite(num) && num > 0 ? num : 20;
-}
-
-function calculateCostPer100Km(pricePerKwh) {
-  if (typeof pricePerKwh !== "number") return "—";
-  return `${(pricePerKwh * getConsumptionValue()).toFixed(2)} €`;
 }
 
 function powerIcon(type) {
@@ -222,6 +221,17 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function getConsumptionValue() {
+  const raw = els.consumptionInput?.value;
+  const num = Number(raw);
+  return Number.isFinite(num) && num > 0 ? num : 20;
+}
+
+function calculateCostPer100Km(pricePerKwh) {
+  if (typeof pricePerKwh !== "number") return "—";
+  return `${(pricePerKwh * getConsumptionValue()).toFixed(2)} €`;
 }
 
 function haversineKm(lat1, lon1, lat2, lon2) {
@@ -289,15 +299,13 @@ function attachEvents() {
       if (els.powerTypeFilter) els.powerTypeFilter.value = "";
       if (els.searchFilter) els.searchFilter.value = "";
       if (els.sortBy) els.sortBy.value = "priceAsc";
-      if (els.onlyWithPrice) els.onlyWithPrice.checked = true;
+      if (els.onlyWithPrice) els.onlyWithPrice.checked = false;
       if (els.consumptionInput) els.consumptionInput.value = "20";
       applyFilters();
     });
   }
 
-  if (els.locateBtn) {
-    els.locateBtn.addEventListener("click", locateAndShowCheapestNearby);
-  }
+  if (els.locateBtn) els.locateBtn.addEventListener("click", locateAndShowCheapestNearby);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
