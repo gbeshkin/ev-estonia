@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "station_id": 53811,
+    "site_id": 53811,
+    "operator": "Enefit Volt",
+    "station_name": "Sample Enefit Volt station",
+    "city": "Tallinn",
+    "address": "Sample address, Tallinn",
+    "lat": 59.4219,
+    "lng": 24.7996,
+    "speed": "FAST",
+    "power_type": "DC",
+    "power_kw": 120,
+    "price_eur_kwh": 0.42,
+    "price_source": "live_station_api",
+    "status_id": "AVAILABLE",
+    "sockets": [
+      {
+        "name": "CCS 1",
+        "maximum_power": 120,
+        "status_id": "AVAILABLE",
+        "price_eur_kwh": 0.42
+      }
+    ]
+  }
+]
