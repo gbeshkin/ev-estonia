@@ -1,9 +1,9 @@
-name: Update Enefit Volt data
+name: Update Enefit EV data
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 6,18 * * *"
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -26,11 +26,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch live Enefit data
+      - name: Fetch Enefit live data
         env:
           ENEFIT_CSRF_TOKEN: ${{ secrets.ENEFIT_CSRF_TOKEN }}
-          ENEFIT_COOKIE: ${{ secrets.ENEFIT_COOKIE }}
+          ENEFIT_JSESSIONID: ${{ secrets.ENEFIT_JSESSIONID }}
+          ENEFIT_COOKIECONSENT: ${{ secrets.ENEFIT_COOKIECONSENT }}
           ENEFIT_REFERER: ${{ secrets.ENEFIT_REFERER }}
+          ENEFIT_USER_AGENT: ${{ secrets.ENEFIT_USER_AGENT }}
+          ENEFIT_NE_LAT: "59.992055582206284"
+          ENEFIT_NE_LNG: "36.90604928286816"
+          ENEFIT_SW_LAT: "57.98910906186832"
+          ENEFIT_SW_LNG: "15.812299282868159"
         run: python scripts/fetch_enefit_live.py
 
       - name: Commit updated data
@@ -38,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/chargers.json
-          git diff --cached --quiet || git commit -m "Update Enefit Volt data"
+          git diff --cached --quiet || git commit -m "Update Enefit EV data"
           git push
