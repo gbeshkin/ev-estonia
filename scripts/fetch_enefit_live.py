@@ -1,188 +1,123 @@
-import os
 import json
+import os
 import time
-import requests
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+
+import requests
 
 BASE = "https://account.enefitvolt.com/stationFacade"
 OUT_FILE = Path("data/chargers.json")
 
-HEADERS = {
-    "User-Agent": os.getenv(
-        "ENEFIT_USER_AGENT",
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/144.0.0.0 Safari/537.36",
-    ),
-    "Accept": "application/json, text/javascript, */*; q=0.01",
-    "Content-Type": "application/json;charset=UTF-8",
-    "X-Requested-With": "XMLHttpRequest",
-    "Origin": "https://account.enefitvolt.com",
-    "Referer": os.getenv(
-        "ENEFIT_REFERER",
-        "https://account.enefitvolt.com/findCharger?lang=en",
-    ),
-}
 
-csrf = os.getenv("ENEFIT_CSRF_TOKEN", "").strip()
-cookie = os.getenv("ENEFIT_COOKIE", "").strip()
-
-if csrf:
-    HEADERS["x-csrf-token"] = csrf
-
-if cookie:
-    HEADERS["Cookie"] = cookie
+def env_required(name: str) -> str:
+    value = os.getenv(name, "").strip()
+    if not value:
+        raise RuntimeError(f"Missing required env var: {name}")
+    return value
 
 
-def build_session() -> requests.Session:
-    session = requests.Session()
-    session.headers.update(HEADERS)
-    return session
+def build_headers() -> Dict[str, str]:
+    return {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/json",
+        "origin": "https://account.enefitvolt.com",
+        "referer": os.getenv("ENEFIT_REFERER", "https://account.enefitvolt.com/findCharger"),
+        "user-agent": os.getenv(
+            "ENEFIT_USER_AGENT",
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/144.0.0.0 Safari/537.36",
+        ),
+        "x-app-type": "WEB",
+        "x-csrf-token": env_required("ENEFIT_CSRF_TOKEN"),
+        "x-json-types": "None",
+        "x-requested-with": "XMLHttpRequest",
+    }
 
 
-def post_json(session: requests.Session, path: str, payload: Dict[str, Any]) -> Dict[str, Any]:
-    url = f"{BASE}/{path}"
-    response = session.post(
-        url,
-        data=json.dumps(payload),
-        timeout=45,
-    )
-    response.raise_for_status()
-    return response.json()
+def build_cookies() -> Dict[str, str]:
+    return {
+        "CookieConsent": os.getenv("ENEFIT_COOKIECONSENT", ""),
+        "JSESSIONID": env_required("ENEFIT_JSESSIONID"),
+    }
 
 
-def get_json(
-    session: requests.Session,
-    path: str,
-    params: Optional[Dict[str, Any]] = None,
-) -> Dict[str, Any]:
-    url = f"{BASE}/{path}"
-    response = session.get(
-        url,
-        params=params,
-        timeout=45,
-    )
-    response.raise_for_status()
-    return response.json()
-
-
-def safe_list_data(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
-    data = payload.get("data")
-    if isinstance(data, list):
-        if len(data) > 1 and isinstance(data[1], list):
-            return data[1]
-        if len(data) > 0 and isinstance(data[0], list):
-            return data[0]
-    if isinstance(data, list):
-        return data
-    return []
-
-
-def safe_object_data(payload: Dict[str, Any]) -> Dict[str, Any]:
-    data = payload.get("data")
-    if isinstance(data, dict):
-        return data
-    if isinstance(data, list):
-        for item in data:
-            if isinstance(item, dict):
-                return item
-    return {}
-
-
-def find_sites_in_bounds(session: requests.Session) -> List[Dict[str, Any]]:
+def post_sites(session: requests.Session) -> List[Dict[str, Any]]:
     payload = {
         "filterByIsManaged": True,
         "filterByBounds": {
-            "northEastLat": 59.90,
-            "northEastLng": 28.30,
-            "southWestLat": 57.45,
-            "southWestLng": 21.70,
+            "northEastLat": float(os.getenv("ENEFIT_NE_LAT", "59.992055582206284")),
+            "northEastLng": float(os.getenv("ENEFIT_NE_LNG", "36.90604928286816")),
+            "southWestLat": float(os.getenv("ENEFIT_SW_LAT", "57.98910906186832")),
+            "southWestLng": float(os.getenv("ENEFIT_SW_LNG", "15.812299282868159")),
         },
     }
-
-    result = post_json(session, "findSitesInBounds", payload)
-    return safe_list_data(result)
-
-
-def find_stations_by_site_id(session: requests.Session, site_id: str) -> List[Dict[str, Any]]:
-    payload = {
-        "filterByIsManaged": True,
-        "filterBySiteId": str(site_id),
-    }
-
-    result = post_json(session, "findStationsBySiteId", payload)
-    return safe_list_data(result)
+    r = session.post(f"{BASE}/findSitesInBounds", json=payload, timeout=45)
+    r.raise_for_status()
+    payload = r.json()
+    data = payload.get("data", [])
+    if not isinstance(data, list):
+        return []
+    return data
 
 
-def find_station_by_id(session: requests.Session, station_id: str) -> Dict[str, Any]:
-    result = get_json(session, "findStationById", {"stationId": str(station_id)})
-    return safe_object_data(result)
+def get_station(session: requests.Session, station_id: int) -> Optional[Dict[str, Any]]:
+    r = session.get(f"{BASE}/findStationById", params={"stationId": station_id}, timeout=45)
+    r.raise_for_status()
+    payload = r.json()
+    data = payload.get("data")
+    return data if isinstance(data, dict) else None
 
 
 def extract_socket_price(socket_obj: Dict[str, Any]) -> Optional[float]:
-    prices = socket_obj.get("socketPrices") or []
     values: List[float] = []
-
-    for price_item in prices:
-        value = price_item.get("kwhPrice")
+    for item in socket_obj.get("socketPrices", []) or []:
+        value = item.get("kwhPrice")
         if isinstance(value, (int, float)):
             values.append(float(value))
-
-    if not values:
-        return None
-
-    return min(values)
+    return min(values) if values else None
 
 
 def extract_station_price(sockets: List[Dict[str, Any]]) -> Optional[float]:
     values: List[float] = []
-
     for socket_obj in sockets:
         value = extract_socket_price(socket_obj)
         if isinstance(value, (int, float)):
-            values.append(float(value))
-
-    if not values:
-        return None
-
-    return min(values)
+            values.append(value)
+    return min(values) if values else None
 
 
 def extract_max_power(sockets: List[Dict[str, Any]]) -> Optional[float]:
     values: List[float] = []
-
     for socket_obj in sockets:
         value = socket_obj.get("maximumPower")
         if isinstance(value, (int, float)):
             values.append(float(value))
-
-    if not values:
-        return None
-
-    return max(values)
+    return max(values) if values else None
 
 
-def power_type_from_kw(power_kw: Optional[float]) -> str:
-    if power_kw is None:
+def power_type_from_kw(power_kw: Optional[float], fallback_speed: str = "") -> str:
+    if isinstance(power_kw, (int, float)):
+        if power_kw > 50:
+            return "HPC"
+        if power_kw >= 25:
+            return "DC"
         return "AC"
-    if power_kw > 50:
+    speed = (fallback_speed or "").upper()
+    if "ULTRA" in speed:
         return "HPC"
-    if power_kw >= 25:
+    if "FAST" in speed:
         return "DC"
     return "AC"
 
 
-def normalize_station(detail: Dict[str, Any]) -> Dict[str, Any]:
+def normalize_station(site: Dict[str, Any], detail: Dict[str, Any]) -> Dict[str, Any]:
     sockets = detail.get("stationSockets") or []
-    price = extract_station_price(sockets)
     max_power = extract_max_power(sockets)
-
-    address_parts = [
-        detail.get("addressAddress1") or "",
-        detail.get("addressZipCode") or "",
-        detail.get("addressCity") or "",
-    ]
+    price = extract_station_price(sockets)
+    city = detail.get("addressCity") or ""
+    address_parts = [detail.get("addressAddress1") or "", detail.get("addressZipCode") or "", city]
     address = ", ".join(part for part in address_parts if part)
 
     socket_items = []
@@ -197,112 +132,56 @@ def normalize_station(detail: Dict[str, Any]) -> Dict[str, Any]:
         )
 
     return {
-        "station_id": detail.get("id"),
+        "station_id": detail.get("id") or site.get("id"),
+        "site_id": detail.get("siteId") or site.get("siteId") or site.get("id"),
         "operator": "Enefit Volt",
-        "station_name": detail.get("siteDisplayName") or detail.get("caption") or "Unnamed station",
-        "city": detail.get("addressCity") or "",
+        "station_name": detail.get("siteDisplayName") or detail.get("caption") or site.get("dn") or "Unnamed station",
+        "city": city,
         "address": address,
-        "lat": detail.get("latitude"),
-        "lng": detail.get("longitude"),
-        "power_type": power_type_from_kw(max_power),
+        "lat": detail.get("latitude") or site.get("latitude"),
+        "lng": detail.get("longitude") or site.get("longitude"),
+        "speed": site.get("scs") or "",
+        "power_type": power_type_from_kw(max_power, site.get("scs") or ""),
         "power_kw": max_power,
         "price_eur_kwh": price,
         "price_source": "live_station_api",
-        "status_id": detail.get("stationStatusId"),
-        "owner": detail.get("stationOwnerName"),
-        "site_id": detail.get("siteId"),
+        "status_id": detail.get("stationStatusId") or site.get("ss"),
         "sockets": socket_items,
     }
 
 
-def dedupe_stations(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    seen = set()
-    result = []
-
-    for item in items:
-        key = item.get("station_id")
-        if key in seen:
-            continue
-        seen.add(key)
-        result.append(item)
-
-    return result
-
-
 def main() -> None:
-    session = build_session()
+    session = requests.Session()
+    session.headers.update(build_headers())
+    session.cookies.update(build_cookies())
 
-    try:
-        sites = find_sites_in_bounds(session)
-        print(f"Sites found: {len(sites)}")
-    except requests.HTTPError as e:
-        print(f"HTTP error in findSitesInBounds: {e}")
-        raise
-    except Exception as e:
-        print(f"Unexpected error in findSitesInBounds: {e}")
-        raise
-
-    all_station_ids: List[str] = []
-
-    for idx, site in enumerate(sites, start=1):
-        site_id = site.get("id")
-        if not site_id:
-            continue
-
-        try:
-            stations = find_stations_by_site_id(session, str(site_id))
-            print(f"[{idx}/{len(sites)}] site {site_id}: stations {len(stations)}")
-        except requests.HTTPError as e:
-            print(f"HTTP error in findStationsBySiteId for site {site_id}: {e}")
-            continue
-        except Exception as e:
-            print(f"Unexpected error in findStationsBySiteId for site {site_id}: {e}")
-            continue
-
-        for station in stations:
-            station_id = station.get("id")
-            if station_id:
-                all_station_ids.append(str(station_id))
-
-        time.sleep(0.15)
-
-    unique_station_ids = sorted(set(all_station_ids))
-    print(f"Unique station IDs found: {len(unique_station_ids)}")
+    sites = post_sites(session)
+    print(f"Sites found: {len(sites)}")
 
     chargers: List[Dict[str, Any]] = []
 
-    for idx, station_id in enumerate(unique_station_ids, start=1):
+    for idx, site in enumerate(sites, start=1):
+        station_id = site.get("id")
+        if not station_id:
+            continue
         try:
-            detail = find_station_by_id(session, station_id)
+            detail = get_station(session, int(station_id))
             if not detail:
-                print(f"[{idx}/{len(unique_station_ids)}] station {station_id}: empty detail")
+                print(f"[{idx}/{len(sites)}] station {station_id}: no detail data")
                 continue
-
-            charger = normalize_station(detail)
+            charger = normalize_station(site, detail)
             chargers.append(charger)
-
-            price = charger.get("price_eur_kwh")
-            print(
-                f"[{idx}/{len(unique_station_ids)}] station {station_id}: "
-                f"{charger.get('station_name')} | price={price}"
-            )
+            print(f"[{idx}/{len(sites)}] {charger['station_name']} | {charger.get('price_eur_kwh')}")
         except requests.HTTPError as e:
-            print(f"HTTP error in findStationById for station {station_id}: {e}")
+            print(f"[{idx}/{len(sites)}] station {station_id}: HTTP error {e}")
         except Exception as e:
-            print(f"Unexpected error in findStationById for station {station_id}: {e}")
-
+            print(f"[{idx}/{len(sites)}] station {station_id}: error {e}")
         time.sleep(0.15)
 
-    chargers = dedupe_stations(chargers)
-
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    OUT_FILE.write_text(
-        json.dumps(chargers, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    OUT_FILE.write_text(json.dumps(chargers, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    priced = sum(1 for item in chargers if isinstance(item.get("price_eur_kwh"), (int, float)))
-
+    priced = sum(1 for x in chargers if isinstance(x.get("price_eur_kwh"), (int, float)))
     print(f"Saved {len(chargers)} stations to {OUT_FILE}")
     print(f"Stations with price: {priced}")
 
