@@ -13,18 +13,18 @@
     "power_kw": 22.0,
     "price_eur_kwh": 0.42,
     "price_source": "live_station_api",
-    "status_id": "CHARGING",
+    "status_id": "AVAILABLE",
     "sockets": [
       {
         "name": "Type2 (A)",
         "maximum_power": 22.0,
-        "status_id": "CHARGING",
+        "status_id": "AVAILABLE",
         "price_eur_kwh": 0.42
       },
       {
         "name": "Type2 (B)",
         "maximum_power": 22.0,
-        "status_id": "CHARGING",
+        "status_id": "AVAILABLE",
         "price_eur_kwh": 0.42
       }
     ]
