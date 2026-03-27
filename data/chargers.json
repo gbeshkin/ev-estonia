@@ -1,35 +1,5 @@
 [
   {
-    "station_id": 721,
-    "site_id": 616,
-    "operator": "Enefit Volt",
-    "station_name": "Tabivere PK",
-    "city": "Tabivere",
-    "address": "Hariduse 1, Tabivere, 46127, Tabivere",
-    "lat": 58.5481843,
-    "lng": 26.6070967,
-    "speed": "SEMI_FAST",
-    "power_type": "AC",
-    "power_kw": 22.0,
-    "price_eur_kwh": 0.42,
-    "price_source": "live_station_api",
-    "status_id": "AVAILABLE",
-    "sockets": [
-      {
-        "name": "Type2 (A)",
-        "maximum_power": 22.0,
-        "status_id": "AVAILABLE",
-        "price_eur_kwh": 0.42
-      },
-      {
-        "name": "Type2 (B)",
-        "maximum_power": 22.0,
-        "status_id": "AVAILABLE",
-        "price_eur_kwh": 0.42
-      }
-    ]
-  },
-  {
     "station_id": 607,
     "site_id": 559,
     "operator": "Enefit Volt",
